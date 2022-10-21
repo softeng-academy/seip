@@ -10,8 +10,11 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@3.2.33/dist/vue.global.prod.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/js/all.min.js"></script>
         <style type="text/css">
             html {
                 margin: 0;
@@ -20,7 +23,7 @@
             }
             body {
                 margin: 0;
-                background: linear-gradient(#ffffff, #e0e0e0);
+                background: #f0f0f0;
                 background-repeat: no-repeat;
                 font-family: "Source Sans Pro", sans-serif;
                 font-size: 12pt;
@@ -33,8 +36,14 @@
                 height: auto;
                 min-height: 100vh;
             }
+            .page {
+                width: 100vw;
+            }
             .header {
+                background-color: #f0f0f0;
                 text-align: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
             }
             .header .header1 {
                 font-size: 20pt;
@@ -47,7 +56,7 @@
                 margin-top: 8px;
                 margin-bottom: 8px;
                 letter-spacing: -0.5px;
-                color: #336699;
+                color: #444444;
             }
             .header .header3 {
                 font-size: 20pt;
@@ -55,24 +64,199 @@
                 margin-bottom: 16px;
             }
             .logos {
+                background: #ffffff;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .logos-grid {
                 display: grid;
                 grid-template:
                     "logo1 logo2 logo3"
                     "name1 name2 name3";
                 grid-gap: 8px;
             }
-            .logos img {
+            .logos-grid img {
                 height: 80px;
                 margin-right: 30px;
             }
-            .logos div {
+            .logos-grid div {
                 margin-right: 30px;
                 text-align: center;
                 font-weight: 300;
             }
-            .logos img.msg {
+            .logos-grid img.msg {
                 margin-top: 10px;
                 height: 60px;
+            }
+            .logos-grid img.sea {
+                height: 90px;
+                margin-left: 40px;
+            }
+            .access {
+                padding-top: 40px;
+                padding-bottom: 40px;
+                display: block;
+                background-color: #336699;
+                color: #ffffff;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .access a, .access a:visited {
+                color: #d0e0ff;
+            }
+            .accesstoken {
+            }
+            .accesstoken .field {
+                position: relative;
+                margin-top: 8px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .accesstoken .field input {
+                width: 400px;
+                margin: 0;
+                font-size: 20pt;
+                padding: 4px 60px 4px 20px;
+                color: #003366;
+                background-color: #99ccff;
+                border-top:    1px solid #003366;
+                border-left:   1px solid #003366;
+                border-right:  0px solid #99ccff;
+                border-bottom: 1px solid #99ccff;
+                border-radius: 8px;
+                height: 40px;
+                outline: none;
+            }
+            .accesstoken .field input.valid {
+            }
+            .accesstoken .field input.invalid {
+            }
+            .accesstoken .field .status {
+                position: absolute;
+                top: 2px;
+                right: 10px;
+                margin: 0;
+                padding: 4px 8px;
+                height: 36px;
+                width: 40px;
+                color: #336699;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20pt;
+            }
+            .accesstoken .field .status.valid {
+                color: #006600;
+            }
+            .accesstoken .field .status.invalid {
+                color: #990000;
+            }
+            .accesslink {
+                margin-top: 40px;
+                display: grid;
+                grid-template:
+                    "pic1 pic2"
+                    "info1 info2";
+                grid-gap: 20px;
+            }
+            .accesslink .col1 {
+                width: 600px;
+            }
+            .accesslink .col2 {
+                width: 300px;
+            }
+            .accesslink img {
+                border: 1px solid #003366;
+            }
+            .accesslink img:hover {
+                border: 1px solid #e0f0ff;
+            }
+            .roster {
+                background-color: #ffffff;
+                width: 100vw;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: top;
+            }
+            .roster .main {
+                margin-right: 40px;
+            }
+            .roster .material .agenda,
+            .roster .material .content,
+            .roster .material .script {
+                color: #ffffff;
+                background-color: #666666;
+                padding: 1px 8px;
+                margin-right: 8px;
+                border-radius: 4px;
+                font-size: 80%;
+            }
+            .roster .material .agenda {
+                background-color: #b0b0b0;
+            }
+            .roster .material .content {
+                background-color: #336699;
+            }
+            .roster .material .agenda:hover,
+            .roster .material .content:hover,
+            .roster .material .script:hover {
+                background-color: #003366;
+                color: #ffffff;
+            }
+            .roster .tab {
+                border-spacing: 0;
+            }
+            .roster .tab td {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+            .roster .tab .row0 td {
+                font-weight: 300;
+            }
+            .roster .tab .row1 {
+                background-color: #f0f0f0;
+            }
+            .roster .tab .name {
+                font-weight: bold;
+            }
+            .roster .tab td {
+                padding-right: 10px;
+            }
+            .roster .hint {
+                font-weight: 300;
+            }
+            .footer {
+                background-color: #f0f0f0;
+                width: 100vw;
+                text-align: center;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            a, a:visited {
+                color: #336699;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #6699cc;
+            }
+            a.invalid {
+                color: #ff0000;
+                text-decoration: strike-through;
             }
         </style>
     </head>
@@ -91,21 +275,231 @@
                 </div>
             </div>
             <div class="logos">
-                <img style="grid-area: logo1" class="tum" src="tum-logo.svg">
-                <div style="grid-area: name1">
-                    Prof. Dr. Florian Matthes<br>
-                    sebis Lehrstuhl, TUM
-                </div>
-                <img style="grid-area: logo2" class="sea" src="sea-logo.svg"><br/>
-                <div style="grid-area: name2">
-                    Dr. Ralf S. Engelschall<br/>
-                    SEA Software Engineering Academy gGmbH
-                </div>
-                <img style="grid-area: logo3" class="msg" src="msg-logo.svg"><br/>
-                <div style="grid-area: name3">
-                    Dr. Ralf S. Engelschall<br/>
-                    msg Research, msg systems ag
+                <div class="logos-grid">
+                    <img style="grid-area: logo1" class="tum" src="img/logo-tum.svg">
+                    <div style="grid-area: name1" class="logo">
+                        Prof. Dr. Florian Matthes<br>
+                        sebis Lehrstuhl, TUM<br/>
+                        (Verantwortung, Organisation, Klausur)
                     </div>
+                    <img style="grid-area: logo2" class="sea" src="img/logo-sea.svg"><br/>
+                    <div style="grid-area: name2" class="logo">
+                        Dr. Ralf S. Engelschall<br/>
+                        SEA Software Engineering Academy gGmbH<br/>
+                        (Lehrauftrag, Materialien, Inhalte)
+                    </div>
+                    <img style="grid-area: logo3" class="msg" src="img/logo-msg.svg"><br/>
+                    <div style="grid-area: name3" class="logo">
+                        Dr. Ralf S. Engelschall<br/>
+                        msg Research, msg systems ag<br/>
+                        (Lehrauftrag, Kontext, Erfahrungen)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="access">
+                <div class="accesstoken">
+                    Bitte geben Sie hier Ihr erhaltenes TOKEN für den Zugriff ein:<br/>
+                    <div class="field">
+                        <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }" type="text" width="40" v-model="accessToken">
+                        <div class="status" v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }">
+                            <span v-show="isValidToken"><i class="fas fa-lock-open"></i></span>
+                            <span v-show="!isValidToken"><i class="fas fa-lock"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="accesslink">
+                    <a class="col1" style="grid-area: pic1" v-bind:class="{ invalid: !isValidToken }"
+                        v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                        <img src="img/screenshot-lecture.jpg" height="300">
+                    </a>
+                    <div class="col1 info" style="grid-area: info1">
+                        Durch einen Klick auf das obige Bild können Sie an dem <b>Microsoft Teams</b> Meeting
+                        der Lehrveranstaltung teilnehmen. Bitte installieren Sie dazu <a href="https://www.microsoft.com/de-de/microsoft-teams/download-app">Microsoft Teams als
+                        Desktop Anwendung (für macOS, Windows und Linux)</a> oder nehmen Sie (mit kleinen Einschränkungen) über die Web-Version von Microsoft Teams teil.
+                        Während der Lehrveranstaltung können Sie direkt mit dem Dozenten sprechen.
+                        Über die gesonderte Anwendung <b>HUDS Pad</b> (siehe rechts) können Sie zusätzlich anonym textuelle
+                        Nachrichten einsteuern, an den Quizzes teilnehmen, Feedback über Emojis senden
+                        und ihre persönliche aktuelle Forderungs- und Gefühlslage mitteilen.
+                    </div>
+                    <a class="col2" style="grid-area: pic2" v-bind:class="{ invalid: !isValidToken }"
+                        v-bind:href="grantAccess('U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">
+                        <img src="img/screenshot-pad.png" height="300">
+                    </a>
+                    <div class="col2 info" style="grid-area: info2">
+                        Durch einen Klick auf das obige Bild können Sie live Feedback in die Lehrveranstaltung einsteuern. Öffnen Sie die
+                        Anwendung <b>HUDS Pad</b> entweder in einem gesonderten Browser-Fenster
+                        oder nutzen Sie den QR-Code innerhalb der Anwendung (Icon rechts oben),
+                        um die Anwendung auf ein Handy zu übertragen (Android/Chrome, iOS/Safari).
+                        Nutzen Sie zusätzlich die Funktion "Zum HOME-Bildschirm hinzufügen" unter iOS.
+                        <p/>
+                    </div>
+                </div>
+            </div>
+            <div class="roster">
+                <div class="main">
+                    Ihre Termine und Unterlagen für die <b>Vorlesungen</b>:<br/>
+                    <span class="hint">(Durchführung als Online-Meeting, siehe oben)</span>
+                    <p/>
+                    <table class="tab">
+                        <tr class="row0">
+                            <td>Tag</td>
+                            <td>Datum</td>
+                            <td>Uhrzeit</td>
+                            <td>Name</td>
+                            <td>Unterlagen</td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-10-27</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 01</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-01-Agenda.pdf" class="agenda">AGENDA</a>
+                                <a href="doc/TUM-SEIP-01-Content.pdf" class="content">CONTENT</a>
+                                <a href="doc/TUM-SEIP-01-Script-EN.pdf" class="script">SCRIPT (EN)</a>
+                                <a href="doc/TUM-SEIP-01-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">FR</td>
+                            <td class="date">2022-10-28</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 02</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-02-Agenda.pdf" class="agenda">AGENDA</a>
+                                <a href="doc/TUM-SEIP-02-Content.pdf" class="content">CONTENT</a>
+                                <a href="doc/TUM-SEIP-02-Script-EN.pdf" class="script">SCRIPT (EN)</a>
+                                <a href="doc/TUM-SEIP-02-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                            </td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-11-03</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 03</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-03-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">FR</td>
+                            <td class="date">2022-11-04</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 04</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-04-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-11-10</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 05</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-05-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">FR</td>
+                            <td class="date">2022-11-11</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 06</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-06-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-11-24</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 07</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-07-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">FR</td>
+                            <td class="date">2022-11-25</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 08</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-08-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-12-01</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 09</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-09-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">FR</td>
+                            <td class="date">2022-12-02</td>
+                            <td class="time">14:00-17:00</td>
+                            <td class="name">Modul 10</td>
+                            <td class="material">
+                                <a href="doc/TUM-SEIP-10-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="side">
+                    Ihre Termine für die <b>Sprechstunden</b>:<br/>
+                    <span class="hint">(Durchführung als Online-Meeting, siehe oben)</span><br/>
+                    <span class="hint">(bitte bis spätestens 17:15 Uhr kommen)</span>
+                    <p/>
+                    <table class="tab">
+                        <tr class="row0">
+                            <td>Tag</td>
+                            <td>Datum</td>
+                            <td>Uhrzeit</td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-10-27</td>
+                            <td class="time">17:00-18:00</td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">DO</td>
+                            <td class="date">2022-11-03</td>
+                            <td class="time">17:00-18:00</td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-11-10</td>
+                            <td class="time">17:00-18:00</td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">DO</td>
+                            <td class="date">2022-11-24</td>
+                            <td class="time">17:00-18:00</td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-12-01</td>
+                            <td class="time">17:00-18:00</td>
+                        </tr>
+                    </table>
+                    <p/>
+                    Ihr Termin für die <b>Klausur</b>:<br/>
+                    <span class="hint">(Durchführung als Präsenzveranstaltung)</span>
+                    <p/>
+                    <table class="tab">
+                        <tr class="row0">
+                            <td>Tag</td>
+                            <td>Datum</td>
+                            <td>Uhrzeit</td>
+                        </tr>
+                        <tr class="row1">
+                            <td class="day">DO</td>
+                            <td class="date">2022-12-13</td>
+                            <td class="time">18:45-20:00</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="footer">
@@ -114,8 +508,24 @@
     </body>
     <script type="text/javascript">
         Vue.createApp({
-            data () {
-                return {
+            data: (() => ({
+                accessToken: ""
+            })),
+            computed: {
+                isValidToken () {
+                    return (this.grantAccess("U2FsdGVkX19nWjpyv/EGIkGAvNE5yGsOk1PDNi/CPCg=") === "magic")
+                }
+            },
+            methods: {
+                grantAccess (cipherText) {
+                    let originalText = ""
+                    try {
+                        if (this.accessToken !== "")
+                            originalText = CryptoJS.AES.decrypt(cipherText, this.accessToken).toString(CryptoJS.enc.Utf8)
+                    }
+                    catch (ex) {
+                    }
+                    return originalText
                 }
             }
         }).mount("body")
