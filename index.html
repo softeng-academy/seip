@@ -5,7 +5,7 @@
         <meta charset="UTF-8"/>
         <link rel="shortcut icon" href="logo.ico">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@3.2.33/dist/vue.global.prod.js"></script>
@@ -14,27 +14,101 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
         <style type="text/css">
             html {
+                margin: 0;
                 width: 100vw;
                 height: auto;
-                margin: 0;
             }
             body {
-                background: linear-gradient(#282828, #000000);
+                margin: 0;
+                background: linear-gradient(#ffffff, #e0e0e0);
                 background-repeat: no-repeat;
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: 12pt;
+                font-weight: normal;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 width: 100vw;
                 height: auto;
-                margin: 0;
+                min-height: 100vh;
+            }
+            .header {
+                text-align: center;
+            }
+            .header .header1 {
+                font-size: 20pt;
+                font-weight: 300;
+            }
+            .header .header2 {
+                font-size: 24pt;
+                line-height: 100%;
+                font-weight: bold;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                letter-spacing: -0.5px;
+                color: #336699;
+            }
+            .header .header3 {
+                font-size: 20pt;
+                font-weight: 300;
+                margin-bottom: 16px;
+            }
+            .logos {
+                display: grid;
+                grid-template:
+                    "logo1 logo2 logo3"
+                    "name1 name2 name3";
+                grid-gap: 8px;
+            }
+            .logos img {
+                height: 80px;
+                margin-right: 30px;
+            }
+            .logos div {
+                margin-right: 30px;
+                text-align: center;
+                font-weight: 300;
+            }
+            .logos img.msg {
+                margin-top: 10px;
+                height: 60px;
             }
         </style>
     </head>
     <body>
         <div class="page invisible" v-bind:class="{ visible: true }">
+            <div class="header">
+                <div class="header1">
+                    TUM Lehrveranstaltung<br/>
+                </div>
+                <div class="header2">
+                    SOFTWARE ENGINEERING IN DER<br/>
+                    INDUSTRIELLEN PRAXIS (SEIP)
+                </div>
+                <div class="header3">
+                    im WS22/23, in Kooperation von
+                </div>
+            </div>
+            <div class="logos">
+                <img style="grid-area: logo1" class="tum" src="tum-logo.svg">
+                <div style="grid-area: name1">
+                    Prof. Dr. Florian Matthes<br>
+                    sebis Lehrstuhl, TUM
+                </div>
+                <img style="grid-area: logo2" class="sea" src="sea-logo.svg"><br/>
+                <div style="grid-area: name2">
+                    Dr. Ralf S. Engelschall<br/>
+                    SEA Software Engineering Academy gGmbH
+                </div>
+                <img style="grid-area: logo3" class="msg" src="msg-logo.svg"><br/>
+                <div style="grid-area: name3">
+                    Dr. Ralf S. Engelschall<br/>
+                    msg Research, msg systems ag
+                    </div>
+                </div>
+            </div>
             <div class="footer">
-                Copyright &copy; 2022 <a href="http://engelschall.com/">Dr. Ralf S. Engelschall</a>
             </div>
         </div>
     </body>
