@@ -299,7 +299,7 @@
             </div>
             <div class="access">
                 <div class="accesstoken">
-                    Bitte geben Sie hier Ihr erhaltenes TOKEN für den Zugriff ein:<br/>
+                    Bitte geben Sie hier Ihr erhaltenes TOKEN für den Online-Zugriff ein:<br/>
                     <div class="field">
                         <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }" type="text" width="40" v-model="accessToken">
                         <div class="status" v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }">
@@ -314,13 +314,14 @@
                         <img src="img/screenshot-lecture.jpg" height="300">
                     </a>
                     <div class="col1 info" style="grid-area: info1">
-                        Durch einen Klick auf das obige Bild können Sie an dem <b>Microsoft Teams</b> Meeting
+                        Durch einen Klick auf das obige Bild können Sie an den <b>Microsoft Teams</b> Meetings
                         der Lehrveranstaltung teilnehmen. Bitte installieren Sie dazu <a href="https://www.microsoft.com/de-de/microsoft-teams/download-app">Microsoft Teams als
                         Desktop Anwendung (für macOS, Windows und Linux)</a> oder nehmen Sie (mit kleinen Einschränkungen) über die Web-Version von Microsoft Teams teil.
+                        <p/>
                         Während der Lehrveranstaltung können Sie direkt mit dem Dozenten sprechen.
-                        Über die gesonderte Anwendung <b>HUDS Pad</b> (siehe rechts) können Sie zusätzlich anonym textuelle
+                        Über die gesonderte Anwendung <b>HUDS Pad</b> (siehe rechts) können Sie zusätzlich textuelle
                         Nachrichten einsteuern, an den Quizzes teilnehmen, Feedback über Emojis senden
-                        und ihre persönliche aktuelle Forderungs- und Gefühlslage mitteilen.
+                        und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
                     </div>
                     <a class="col2" target="_blank" style="grid-area: pic2" v-bind:class="{ invalid: !isValidToken }"
                         v-bind:href="grantAccess('U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">
@@ -331,7 +332,7 @@
                         Anwendung <b>HUDS Pad</b> entweder in einem gesonderten Browser-Fenster
                         oder nutzen Sie den QR-Code innerhalb der Anwendung (Icon rechts oben),
                         um die Anwendung auf ein Handy zu übertragen (Android/Chrome, iOS/Safari).
-                        Nutzen Sie zusätzlich die Funktion "Zum HOME-Bildschirm hinzufügen" unter iOS.
+                        Nutzen Sie zusätzlich am besten die Funktion "Zum HOME/Start-Bildschirm" unter iOS/Android.
                         <p/>
                     </div>
                 </div>
