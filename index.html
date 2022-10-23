@@ -11,18 +11,19 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@3.2.33/dist/vue.global.prod.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue-fullscreen@3.1.1/dist/index.umd.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/js/all.min.js"></script>
         <style type="text/css">
             html {
                 margin: 0;
+                padding: 0;
                 width: 100vw;
                 height: auto;
             }
             body {
                 margin: 0;
+                padding: 0;
                 background: #f0f0f0;
                 background-repeat: no-repeat;
                 font-family: "Source Sans Pro", sans-serif;
@@ -35,9 +36,14 @@
                 width: 100vw;
                 height: auto;
                 min-height: 100vh;
+                position: relative;
             }
             .page {
                 width: 100vw;
+                display: none;
+            }
+            .page.visible {
+                display: block;
             }
             .header {
                 background-color: #f0f0f0;
@@ -66,7 +72,7 @@
             .logos {
                 background: #ffffff;
                 padding-top: 20px;
-                padding-bottom: 20px;
+                padding-bottom: 0;
                 width: 100vw;
                 display: flex;
                 flex-direction: row;
@@ -100,8 +106,7 @@
             .access {
                 padding-top: 40px;
                 padding-bottom: 40px;
-                display: block;
-                background-color: #336699;
+                background-color: #333333;
                 color: #ffffff;
                 width: 100vw;
                 display: flex;
@@ -127,8 +132,8 @@
                 margin: 0;
                 font-size: 20pt;
                 padding: 4px 60px 4px 20px;
-                color: #003366;
-                background-color: #99ccff;
+                color: #000000;
+                background-color: #cccccc;
                 border-top:    1px solid #003366;
                 border-left:   1px solid #003366;
                 border-right:  0px solid #99ccff;
@@ -149,7 +154,7 @@
                 padding: 4px 8px;
                 height: 36px;
                 width: 40px;
-                color: #336699;
+                color: #333333;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -161,25 +166,35 @@
             .accesstoken .field .status.invalid {
                 color: #990000;
             }
-            .accesslink {
-                margin-top: 40px;
-                display: grid;
-                grid-template:
-                    "pic1 pic2"
-                    "info1 info2";
-                grid-gap: 20px;
+            .preview {
+                width: 100vw;
+                background-color: #336699;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
-            .accesslink .col1 {
-                width: 600px;
+            .preview .screenshot {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
             }
-            .accesslink .col2 {
-                width: 300px;
+            .preview .screenshot .screenshot-canvas {
+                background-color: #333333;
+                padding: 10px;
+                border-radius: 8px;
             }
-            .accesslink img {
-                border: 1px solid #003366;
+            .preview .screenshot .lecture {
+                padding-right: 10px;
             }
-            .accesslink img:hover {
-                border: 1px solid #e0f0ff;
+            .preview .info {
+                width: 800px;
+                font-size: 12pt;
+                padding-top: 20px;
+                color: #ffffff;
             }
             .roster {
                 background-color: #ffffff;
@@ -280,10 +295,117 @@
                 color: #ff0000;
                 text-decoration: strike-through;
             }
+            .session-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 50;
+                background-color: #000000c0;
+            }
+            .session {
+                position: fixed;
+                top: 50px;
+                left: 0;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: top;
+                background-color: #111111;
+                z-index: 100;
+                box-shadow: 0 0 30px #000000;
+            }
+            .session .session-head {
+                width: calc(100vw - 40px);
+                height: 40px;
+                padding: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .session .session-head .left {
+                color: #c0c0c0;
+                font-size: 20pt;
+                font-weight: 300;
+                flex-grow: 1;
+                text-align: center;
+            }
+            .session .session-head .right {
+                color: #c0c0c0;
+                font-size: 20pt;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .session .session-head .right .icon:hover {
+                color: #99ccff;
+            }
+            .session .session-head .right .icon.close {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .session .session-body {
+                width: calc(100vw - 40px);
+                padding: 20px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .session .session-body .session-lecture {
+                flex-grow: 1;
+                aspect-ratio: 16 / 9;
+            }
+            .session .session-body .session-lecture iframe {
+                border: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .session .session-body .session-control {
+                aspect-ratio: 9 / 16;
+                width: 360px;
+                padding-left: 10px;
+            }
+            .session .session-body .session-control iframe {
+                border: 0;
+                width: 100%;
+                height: 100%;
+            }
         </style>
     </head>
     <body>
-        <div class="page invisible" v-bind:class="{ visible: true }">
+        <div class="page" v-bind:class="{ visible: true }">
+            <div v-show="session" v-if="session" class="session-overlay">
+            </div>
+            <fullscreen v-show="session" v-if="session" class="session" v-model="fullscreen" :teleport="false" :page-only="false">
+                <div class="session-head">
+                    <div class="left">
+                        {{ sessionName }}
+                    </div>
+                    <div class="right">
+                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div> 
+                        <div class="icon close" v-on:click="closeSession"><i class="fa-regular fa-rectangle-xmark"></i></div>
+                    </div>
+                </div>
+                <div class="session-body">
+                    <div class="session-lecture">
+                        <iframe v-bind:class="{ invalid: !isValidToken }"
+                            v-bind:src="sessionURLLecture">
+                            allow="autoplay" autoplay="autoplay"
+                        </iframe>
+                    </div>
+                    <div class="session-control">
+                        <iframe v-bind:class="{ invalid: !isValidToken }"
+                            v-bind:src="sessionURLControl">
+                        </iframe>
+                    </div>
+                </div>
+            </fullscreen>
             <div class="header">
                 <div class="header1">
                     TUM Lehrveranstaltung<br/>
@@ -319,49 +441,44 @@
                     </div>
                 </div>
             </div>
+            <div class="preview">
+                <div class="screenshot">
+                    <div class="screenshot-canvas">
+                        <img class="lecture" src="img/screenshot-lecture.jpg" height="350">
+                        <img class="control" src="img/screenshot-pad.png" height="350">
+                    </div>
+                </div>
+                <div class="info">
+                    Die Lehrveranstaltung findet, bis auf die Abschlußklausur, ausschließlich online statt.
+                    Dabei kommen zwei Arten von Video-Streaming zum Einsatz. 
+                    Die Vorlesungen selbst wird als 1080p30 Video-Stream live erstellt, welcher mit Hilfe von
+                    <b>YouTube Live Events</b> übertragen wird.
+                    Aufgrund des Video-Broadcasting-Formats können Sie, technisch bedingt, 
+                    während der Vorlesung keine direkte sprachliche Interaktion mit dem Dozenten nutzen.
+                    Über die zusätzlich zum Video-Stream eingeblendete Anwendung <b>HUDS Pad</b> können Sie
+                    allerdings textuelle Nachrichten für Fragen nutzen, an den Quizzes teilnehmen, Feedback über Emojis senden
+                    und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
+                    Für die direkte sprachliche Interaktion mit dem Dozenten nutzen Sie bitte das
+                    <b>Microsoft Teams Meeting</b> der <b>Sprechstunden</b>.
+                </div>
+            </div>
             <div class="access">
                 <div class="accesstoken">
                     Bitte geben Sie hier Ihr erhaltenes TOKEN für den Online-Zugriff ein:<br/>
                     <div class="field">
-                        <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }" type="text" width="40" v-model="accessToken">
+                        <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }"
+                            type="text" width="40" v-model="accessToken" @input="exportHash">
                         <div class="status" v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }">
                             <span v-show="isValidToken"><i class="fas fa-lock-open"></i></span>
                             <span v-show="!isValidToken"><i class="fas fa-lock"></i></span>
                         </div>
                     </div>
                 </div>
-                <div class="accesslink">
-                    <a class="col1" target="_blank" style="grid-area: pic1" v-bind:class="{ invalid: !isValidToken }"
-                        v-bind:href="grantAccess('U2FsdGVkX1/Dd3TUM0WM7Nt6DL7MyZgQLanMoKBb7vqBne4pKxmmisGH4gvH6OEV')">
-                        <img src="img/screenshot-lecture.jpg" height="300">
-                    </a>
-                    <div class="col1 info" style="grid-area: info1">
-                        Durch einen Klick auf das obige Bild können Sie an dem <b>YouTube Live Event</b>
-                        der <b>Vorlesung</b> teilnehmen.
-                        Über die gesonderte Anwendung <b>HUDS Pad</b> (siehe rechts) können Sie textuelle
-                        Nachrichten einsteuern, an den Quizzes teilnehmen, Feedback über Emojis senden
-                        und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
-                        Für die direkte sprachliche Interaktion mit dem Dozenten nutzen Sie bitte das
-                        <b>Microsoft Teams Meeting</b> der <b>Sprechstunden</b>.
-                    </div>
-                    <a class="col2" target="_blank" style="grid-area: pic2" v-bind:class="{ invalid: !isValidToken }"
-                        v-bind:href="grantAccess('U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">
-                        <img src="img/screenshot-pad.png" height="300">
-                    </a>
-                    <div class="col2 info" style="grid-area: info2">
-                        Durch einen Klick auf das obige Bild können Sie live Feedback in die Lehrveranstaltung einsteuern. Öffnen Sie die
-                        Anwendung <b>HUDS Pad</b> entweder in einem gesonderten Browser-Fenster
-                        oder nutzen Sie den QR-Code innerhalb der Anwendung (Icon rechts oben),
-                        um die Anwendung auf ein Handy zu übertragen (Android/Chrome, iOS/Safari).
-                        Nutzen Sie zusätzlich am besten die Funktion "Zum HOME/Start-Bildschirm" unter iOS/Android.
-                        <p/>
-                    </div>
-                </div>
             </div>
             <div class="roster">
                 <div class="main">
                     Ihre Termine und Unterlagen für die <b>Vorlesungen</b>:<br/>
-                    <span class="hint">(Durchführung online über YouTube Live Event, siehe oben)</span>
+                    <span class="hint">(Durchführung online primär über YouTube Live Event und sekundär über Microsoft Teams)</span>
                     <p/>
                     <table class="tab">
                         <tr class="row0">
@@ -375,11 +492,25 @@
                         <tr class="row1">
                             <td class="day">DO</td>
                             <td class="date">2022-10-27</td>
-                            <td class="time">14:00-17:00</td>
+                            <td class="time">14:00-14:15</td>
+                            <td class="name">Intro</td>
+                            <td class="event">
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                                    INTRO (Teams)</a>
+                            </td>
+                            <td class="material">
+                                <a target="_blank" href="pdf/TUM-SEIP-01-Agenda.pdf" class="agenda">AGENDA</a>
+                            </td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="day">DO</td>
+                            <td class="date">2022-10-27</td>
+                            <td class="time">14:15-17:00</td>
                             <td class="name">Modul 01</td>
                             <td class="event">
                                 <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX1/Dd3TUM0WM7Nt6DL7MyZgQLanMoKBb7vqBne4pKxmmisGH4gvH6OEV')">VORLESUNG</a>
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS22/23: Modul 01', 'U2FsdGVkX1/Dd3TUM0WM7Nt6DL7MyZgQLanMoKBb7vqBne4pKxmmisGH4gvH6OEV', 'U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">VORLESUNG (YouTube)</a>
                             </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Agenda.pdf" class="agenda">AGENDA</a>
@@ -388,14 +519,14 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Script-DE.pdf" class="script">SCRIPT (DE)</a>
                             </td>
                         </tr>
-                        <tr class="row2">
+                        <tr class="row1">
                             <td class="day">FR</td>
                             <td class="date">2022-10-28</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 02</td>
                             <td class="event">
                                 <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX1/M4+GFbGNK+ZdhaB1x+DWl5w/MiIzoRtzTDqxd0puDPinmjZZOLYta')">VORLESUNG</a>
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS22/23: Modul 02', 'U2FsdGVkX1/Dd3TUM0WM7Nt6DL7MyZgQLanMoKBb7vqBne4pKxmmisGH4gvH6OEV', 'U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">VORLESUNG (YouTube)</a>
                             </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Agenda.pdf" class="agenda">AGENDA</a>
@@ -404,7 +535,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Script-DE.pdf" class="script">SCRIPT (DE)</a>
                             </td>
                         </tr>
-                        <tr class="row1">
+                        <tr class="row2">
                             <td class="day">DO</td>
                             <td class="date">2022-11-03</td>
                             <td class="time">14:00-17:00</td>
@@ -416,7 +547,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-03-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row2">
+                        <tr class="row1">
                             <td class="day">FR</td>
                             <td class="date">2022-11-04</td>
                             <td class="time">14:00-17:00</td>
@@ -428,7 +559,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-04-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row1">
+                        <tr class="row2">
                             <td class="day">DO</td>
                             <td class="date">2022-11-10</td>
                             <td class="time">14:00-17:00</td>
@@ -440,7 +571,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-05-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row2">
+                        <tr class="row1">
                             <td class="day">FR</td>
                             <td class="date">2022-11-11</td>
                             <td class="time">14:00-17:00</td>
@@ -452,7 +583,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-06-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row1">
+                        <tr class="row2">
                             <td class="day">DO</td>
                             <td class="date">2022-11-24</td>
                             <td class="time">14:00-17:00</td>
@@ -464,7 +595,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-07-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row2">
+                        <tr class="row1">
                             <td class="day">FR</td>
                             <td class="date">2022-11-25</td>
                             <td class="time">14:00-17:00</td>
@@ -476,7 +607,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-08-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row1">
+                        <tr class="row2">
                             <td class="day">DO</td>
                             <td class="date">2022-12-01</td>
                             <td class="time">14:00-17:00</td>
@@ -488,7 +619,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-09-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
                         </tr>
-                        <tr class="row2">
+                        <tr class="row1">
                             <td class="day">FR</td>
                             <td class="date">2022-12-02</td>
                             <td class="time">14:00-17:00</td>
@@ -521,7 +652,7 @@
                             <td class="event">
                                 <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
                                     v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
-                                    SRPECHSTUNDE
+                                    SPRECHSTUNDE (Teams)
                                 </a>
                             </td>
                         </tr>
@@ -532,7 +663,7 @@
                             <td class="event">
                                 <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
                                     v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
-                                    SRPECHSTUNDE
+                                    SPRECHSTUNDE (Teams)
                                 </a>
                             </td>
                         </tr>
@@ -543,7 +674,7 @@
                             <td class="event">
                                 <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
                                     v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
-                                    SRPECHSTUNDE
+                                    SPRECHSTUNDE (Teams)
                                 </a>
                             </td>
                         </tr>
@@ -554,7 +685,7 @@
                             <td class="event">
                                 <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
                                     v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
-                                    SRPECHSTUNDE
+                                    SPRECHSTUNDE (Teams)
                                 </a>
                             </td>
                         </tr>
@@ -565,7 +696,7 @@
                             <td class="event">
                                 <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
                                     v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
-                                    SRPECHSTUNDE
+                                    SPRECHSTUNDE (Teams)
                                 </a>
                             </td>
                         </tr>
@@ -593,16 +724,48 @@
         </div>
     </body>
     <script type="text/javascript">
-        Vue.createApp({
+        const app = Vue.createApp({
             data: (() => ({
-                accessToken: ""
+                accessToken: "",
+                suppressHashChangeAction: false,
+                session: false,
+                sessionName: "",
+                sessionURLLecture: "",
+                sessionURLControl: "",
+                fullscreen: false
             })),
             computed: {
                 isValidToken () {
                     return (this.grantAccess("U2FsdGVkX19nWjpyv/EGIkGAvNE5yGsOk1PDNi/CPCg=") === "magic")
                 }
             },
+            created () {
+                window.addEventListener("hashchange", async () => {
+                if (!this.suppressHashChangeAction)
+                    this.importHash()
+                }, false)
+                this.importHash()
+            },
             methods: {
+                importHash () {
+                    if (this.accessToken !== window.location.hash) {
+                        this.accessToken = this.accessToken.trim()
+                        this.accessToken = window.location.hash.substring(1)
+                    }
+                },
+                async exportHash () {
+                    if (this.accessToken !== window.location.hash) {
+                        this.accessToken = this.accessToken.trim()
+                        this.suppressHashChangeAction = true
+                        window.location.hash = "#" + this.accessToken
+                        setTimeout(() => {
+                            this.suppressHashChangeAction = false
+                        }, 100)
+                    }
+                },
+                toggleFullscreen () {
+                    this.fullscreen = !this.fullscreen
+                },
                 grantAccess (cipherText) {
                     let originalText = ""
                     try {
@@ -612,8 +775,30 @@
                     catch (ex) {
                     }
                     return originalText
+                },
+                openSession (name, lecture, control) {
+                    if (this.accessToken === "")
+                        return false
+                    try {
+                        lecture = CryptoJS.AES.decrypt(lecture, this.accessToken).toString(CryptoJS.enc.Utf8)
+                        control = CryptoJS.AES.decrypt(control, this.accessToken).toString(CryptoJS.enc.Utf8)
+                    }
+                    catch (ex) {
+                        return false
+                    }
+                    lecture = lecture.replace(/^https:\/\/youtu\.be\/(.+)$/, "https://www.youtube.com/embed/$1?autoplay=1")
+                    this.sessionName = name
+                    this.sessionURLLecture = lecture
+                    this.sessionURLControl = control
+                    this.session = true
+                    return true
+                },
+                closeSession () {
+                    this.session = false
                 }
             }
-        }).mount("body")
+        })
+        app.use(VueFullscreen.default)
+        app.mount("body")
     </script>
 </html>
