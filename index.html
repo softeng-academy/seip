@@ -194,6 +194,17 @@
             .roster .main {
                 margin-right: 40px;
             }
+            .roster .event .youtube {
+                color: #ffffff;
+                background-color: #006600;
+                padding: 1px 8px;
+                margin-right: 8px;
+                border-radius: 4px;
+                font-size: 80%;
+            }
+            .roster .event .youtube.invalid {
+                background-color: #990000;
+            }
             .roster .material .agenda,
             .roster .material .content,
             .roster .material .script {
@@ -239,6 +250,17 @@
             }
             .roster .hint {
                 font-weight: 300;
+            }
+            .roster .sprechstunde {
+                color: #ffffff;
+                background-color: #006600;
+                padding: 1px 8px;
+                margin-right: 8px;
+                border-radius: 4px;
+                font-size: 80%;
+            }
+            .roster .sprechstunde.invalid {
+                background-color: #990000;
             }
             .footer {
                 background-color: #f0f0f0;
@@ -310,18 +332,17 @@
                 </div>
                 <div class="accesslink">
                     <a class="col1" target="_blank" style="grid-area: pic1" v-bind:class="{ invalid: !isValidToken }"
-                        v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                        v-bind:href="grantAccess('U2FsdGVkX1/Dd3TUM0WM7Nt6DL7MyZgQLanMoKBb7vqBne4pKxmmisGH4gvH6OEV')">
                         <img src="img/screenshot-lecture.jpg" height="300">
                     </a>
                     <div class="col1 info" style="grid-area: info1">
-                        Durch einen Klick auf das obige Bild können Sie an den <b>Microsoft Teams</b> Meetings
-                        der Lehrveranstaltung teilnehmen. Bitte installieren Sie dazu <a href="https://www.microsoft.com/de-de/microsoft-teams/download-app">Microsoft Teams als
-                        Desktop Anwendung (für macOS, Windows und Linux)</a> oder nehmen Sie (mit kleinen Einschränkungen) über die Web-Version von Microsoft Teams teil.
-                        <p/>
-                        Während der Lehrveranstaltung können Sie direkt mit dem Dozenten sprechen.
-                        Über die gesonderte Anwendung <b>HUDS Pad</b> (siehe rechts) können Sie zusätzlich textuelle
+                        Durch einen Klick auf das obige Bild können Sie an dem <b>YouTube Live Event</b>
+                        der <b>Vorlesung</b> teilnehmen.
+                        Über die gesonderte Anwendung <b>HUDS Pad</b> (siehe rechts) können Sie textuelle
                         Nachrichten einsteuern, an den Quizzes teilnehmen, Feedback über Emojis senden
                         und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
+                        Für die direkte sprachliche Interaktion mit dem Dozenten nutzen Sie bitte das
+                        <b>Microsoft Teams Meeting</b> der <b>Sprechstunden</b>.
                     </div>
                     <a class="col2" target="_blank" style="grid-area: pic2" v-bind:class="{ invalid: !isValidToken }"
                         v-bind:href="grantAccess('U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">
@@ -340,7 +361,7 @@
             <div class="roster">
                 <div class="main">
                     Ihre Termine und Unterlagen für die <b>Vorlesungen</b>:<br/>
-                    <span class="hint">(Durchführung als Online-Meeting, siehe oben)</span>
+                    <span class="hint">(Durchführung online über YouTube Live Event, siehe oben)</span>
                     <p/>
                     <table class="tab">
                         <tr class="row0">
@@ -348,6 +369,7 @@
                             <td>Datum</td>
                             <td>Uhrzeit</td>
                             <td>Name</td>
+                            <td>Event</td>
                             <td>Unterlagen</td>
                         </tr>
                         <tr class="row1">
@@ -355,6 +377,10 @@
                             <td class="date">2022-10-27</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 01</td>
+                            <td class="event">
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1/Dd3TUM0WM7Nt6DL7MyZgQLanMoKBb7vqBne4pKxmmisGH4gvH6OEV')">VORLESUNG</a>
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Agenda.pdf" class="agenda">AGENDA</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Content.pdf" class="content">CONTENT</a>
@@ -367,6 +393,10 @@
                             <td class="date">2022-10-28</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 02</td>
+                            <td class="event">
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1/M4+GFbGNK+ZdhaB1x+DWl5w/MiIzoRtzTDqxd0puDPinmjZZOLYta')">VORLESUNG</a>
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Agenda.pdf" class="agenda">AGENDA</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Content.pdf" class="content">CONTENT</a>
@@ -379,6 +409,9 @@
                             <td class="date">2022-11-03</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 03</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-03-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -388,6 +421,9 @@
                             <td class="date">2022-11-04</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 04</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-04-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -397,6 +433,9 @@
                             <td class="date">2022-11-10</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 05</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-05-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -406,6 +445,9 @@
                             <td class="date">2022-11-11</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 06</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-06-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -415,6 +457,9 @@
                             <td class="date">2022-11-24</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 07</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-07-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -424,6 +469,9 @@
                             <td class="date">2022-11-25</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 08</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-08-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -433,6 +481,9 @@
                             <td class="date">2022-12-01</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 09</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-09-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -442,6 +493,9 @@
                             <td class="date">2022-12-02</td>
                             <td class="time">14:00-17:00</td>
                             <td class="name">Modul 10</td>
+                            <td class="event">
+                                -
+                            </td>
                             <td class="material">
                                 <a target="_blank" href="pdf/TUM-SEIP-10-Agenda.pdf" class="agenda">AGENDA</a>
                             </td>
@@ -450,7 +504,7 @@
                 </div>
                 <div class="side">
                     Ihre Termine für die <b>Sprechstunden</b>:<br/>
-                    <span class="hint">(Durchführung als Online-Meeting, siehe oben)</span><br/>
+                    <span class="hint">(Durchführung online als Microsoft Teams Meeting)</span><br/>
                     <span class="hint">(bitte bis spätestens 17:15 Uhr kommen)</span>
                     <p/>
                     <table class="tab">
@@ -458,31 +512,62 @@
                             <td>Tag</td>
                             <td>Datum</td>
                             <td>Uhrzeit</td>
+                            <td>Event</td>
                         </tr>
                         <tr class="row1">
                             <td class="day">DO</td>
                             <td class="date">2022-10-27</td>
                             <td class="time">17:00-18:00</td>
+                            <td class="event">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                                    SRPECHSTUNDE
+                                </a>
+                            </td>
                         </tr>
                         <tr class="row2">
                             <td class="day">DO</td>
                             <td class="date">2022-11-03</td>
                             <td class="time">17:00-18:00</td>
+                            <td class="event">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                                    SRPECHSTUNDE
+                                </a>
+                            </td>
                         </tr>
                         <tr class="row1">
                             <td class="day">DO</td>
                             <td class="date">2022-11-10</td>
                             <td class="time">17:00-18:00</td>
+                            <td class="event">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                                    SRPECHSTUNDE
+                                </a>
+                            </td>
                         </tr>
                         <tr class="row2">
                             <td class="day">DO</td>
                             <td class="date">2022-11-24</td>
                             <td class="time">17:00-18:00</td>
+                            <td class="event">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                                    SRPECHSTUNDE
+                                </a>
+                            </td>
                         </tr>
                         <tr class="row1">
                             <td class="day">DO</td>
                             <td class="date">2022-12-01</td>
                             <td class="time">17:00-18:00</td>
+                            <td class="event">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX18XBOajxUR7nlfarPi4Y3LKRahZjMIThYfLL7yd5hOctmgq0aCO+ABw/d9tL3Qt+tpzpQBZPQ/Oxmuu8S84jFxYtnyfvI1pfwYfLFmqU1a42gJZSCz/Vvn29XmrfQfXBr13TsYnEZ5tj6FGMNOReNosPkPN22ndGCswH95qVoZFLFL9hZwGaxynSTgJE5P68OmrsvcrVvWgi9TAhffbwWQAazolwoBvSMs7g/dnQLcBbGEJJHROIfSE6P5KOf7P0FrA9blVihgjAJvDOytyC1hEtAnq33iB7dcEC70jPluTkbIal9ocoS+ff8fXAir9blAE44nXZ/49uqFF6Otv6zis26xRJxF6Frs=')">
+                                    SRPECHSTUNDE
+                                </a>
+                            </td>
                         </tr>
                     </table>
                     <p/>
