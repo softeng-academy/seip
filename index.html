@@ -72,7 +72,7 @@
             .logos {
                 background: #ffffff;
                 padding-top: 20px;
-                padding-bottom: 0;
+                padding-bottom: 20px;
                 width: 100vw;
                 display: flex;
                 flex-direction: row;
@@ -192,7 +192,7 @@
             }
             .preview .info {
                 width: 800px;
-                font-size: 12pt;
+                font-size: 14pt;
                 padding-top: 20px;
                 color: #ffffff;
             }
@@ -388,7 +388,7 @@
                         {{ sessionName }}
                     </div>
                     <div class="right">
-                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div> 
+                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div>
                         <div class="icon close" v-on:click="closeSession"><i class="fa-regular fa-rectangle-xmark"></i></div>
                     </div>
                 </div>
@@ -449,22 +449,31 @@
                     </div>
                 </div>
                 <div class="info">
-                    Die Lehrveranstaltung findet, bis auf die Abschlußklausur, ausschließlich online statt.
-                    Dabei kommen zwei Arten von Video-Streaming zum Einsatz. 
-                    Die Vorlesungen selbst wird als 1080p30 Video-Stream live erstellt, welcher mit Hilfe von
-                    <b>YouTube Live Events</b> übertragen wird.
-                    Aufgrund des Video-Broadcasting-Formats können Sie, technisch bedingt, 
-                    während der Vorlesung keine direkte sprachliche Interaktion mit dem Dozenten nutzen.
+                    Die Lehrveranstaltung findet, bis auf die Abschlußklausur, ausschließlich <u>online</u> statt.
+                    Dabei kommen zwei konträre Arten der Kommunikation zum Einsatz, welche jede bewußt einen anderen Aspekt der
+                    Lehrveranstaltung optimiert.
+                    <p/>
+                    Einerseits kommen hochauflösende 1080p30
+                    Video-Streams für die Kombination von Dozent, Inhalten und einem überlagerten Head-Up-Display (HUD) zum Einsatz,
+                    die als <b>YouTube Live Events</b> im Broadcasting-Format mit einer Latenz von etwa 2 Sekunden ausgeliefert werden und
+                    bei welchem bewußt die Dozenten-Darstellungsqualität und die Features optimiert werden. Technisch bedingt können Sie bei dieser
+                    Kommunikations-Art keine direkte sprachliche Interaktion mit dem Dozenten nutzen.
                     Über die zusätzlich zum Video-Stream eingeblendete Anwendung <b>HUDS Pad</b> können Sie
-                    allerdings textuelle Nachrichten für Fragen nutzen, an den Quizzes teilnehmen, Feedback über Emojis senden
-                    und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
-                    Für die direkte sprachliche Interaktion mit dem Dozenten nutzen Sie bitte das
-                    <b>Microsoft Teams Meeting</b> der <b>Sprechstunden</b>.
+                    allerdings textuelle Nachrichten für beliebige Fragen nutzen, an den Quizzes teilnehmen, Feedback über
+                    Emojis senden und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
+                    <p/>
+                    Andererseits kommen auch interaktive <b>Microsoft Teams Meetings</b> zum Einsatz, bei denen der
+                    Dozent als niedrigauflösende/flüssige 360p30 Video-Streams und die Inhalte als hochauflösende/unflüssige
+                    1080p5 Video-Streams getrennt und mit nur einer geringen Latenz von etwa 0.5 Sekunden ausgeliefert werden und bei welchem über ein Konferenz-Format die
+                    Teilnehmer-Sprachinteraktion optimiert wird. Diese Kommunikations-Art können Sie für die direkte
+                    sprachliche Interaktion mit dem Dozenten nutzen und wird deshalb vorallem für die <b>Sprechstunden</b> genutzt.
                 </div>
             </div>
             <div class="access">
                 <div class="accesstoken">
-                    Bitte geben Sie hier Ihr erhaltenes TOKEN für den Online-Zugriff ein:<br/>
+                    Bitte geben Sie hier Ihr erhaltenes ACCESS TOKEN ein, um die<br/>
+                    Links zu den Online-Events (siehe unten) freizuschalten:
+                    <p/>
                     <div class="field">
                         <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }"
                             type="text" width="40" v-model="accessToken" @input="exportHash">
