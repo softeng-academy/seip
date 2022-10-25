@@ -113,7 +113,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                font-size: 14pt;
+                font-size: 12pt;
             }
             .access a, .access a:visited {
                 color: #d0e0ff;
@@ -192,10 +192,21 @@
                 padding-right: 10px;
             }
             .preview .info {
-                width: 800px;
-                font-size: 14pt;
+                font-size: 12pt;
                 padding-top: 20px;
                 color: #ffffff;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: top;
+            }
+            .preview .info .left {
+                width: 400px;
+                padding-right: 30px;
+            }
+            .preview .info .right {
+                width: 400px;
+                padding-left: 30px;
             }
             .roster {
                 background-color: #ffffff;
@@ -213,8 +224,7 @@
             .roster .event .youtube {
                 color: #ffffff;
                 background-color: #006600;
-                padding: 1px 8px;
-                margin-right: 8px;
+                padding: 1px 6px;
                 border-radius: 4px;
                 font-size: 80%;
             }
@@ -226,8 +236,8 @@
             .roster .material .script {
                 color: #ffffff;
                 background-color: #666666;
-                padding: 1px 8px;
-                margin-right: 8px;
+                padding: 1px 6px;
+                margin-right: 4px;
                 border-radius: 4px;
                 font-size: 80%;
             }
@@ -249,8 +259,8 @@
             .roster .tab td {
                 padding-top: 2px;
                 padding-bottom: 2px;
-                padding-left: 4px;
-                padding-right: 4px;
+                padding-left: 2px;
+                padding-right: 2px;
             }
             .roster .tab .row0 td {
                 font-weight: 300;
@@ -262,7 +272,7 @@
                 font-weight: bold;
             }
             .roster .tab td {
-                padding-right: 10px;
+                padding-right: 8px;
             }
             .roster .hint {
                 font-weight: 300;
@@ -271,7 +281,6 @@
                 color: #ffffff;
                 background-color: #006600;
                 padding: 1px 8px;
-                margin-right: 8px;
                 border-radius: 4px;
                 font-size: 80%;
             }
@@ -450,38 +459,44 @@
                     </div>
                 </div>
                 <div class="info">
-                    In dieser Lehrveranstaltung lernen Sie alle in der Praxis relevanten Konzepte und Methoden des
-                    <b>Software Engineering</b> und dessen "Königsdisziplin" <b>Software Architecture</b> kennen
-                    &mdash; aus der spezifischen Perspektive der Software-Industrie.
-                    <p/>
-                    Ihr Dozent, <b>Dr. Ralf S. Engelschall</b>, ist Leiter von <b>msg Research</b>, einer Querschnittseinheit
-                    für Technologie, Methodik und Strategie innerhalb der <b>msg</b> Unternehmensgruppe, die
-                    eine Historie von 40 Jahren, eine Größe von knapp 10.000 Personen und einen Jahresumsatz von über
-                    1 Milliarde Euro besitzt. Er ist außerdem einer der Gründer und der Geschäftsführer der <b>Software Engineering
-                    Academy</b>, einer gemeinnützigen Organisation zur Unterstützung der Lehre von Software Engineering
-                    und Software Architecture. Als Software Architect und Software Developer zahlreicher Anwendungen, Werkzeuge,
-                    Bibliotheken und Frameworks blickt Ihr Dozent außerdem auf eine Erfahrung von über 30 Jahren in der
-                    industriellen Entwicklung von Individualsoftware und von über 25 Jahren in der Entwicklung von Open Source Software
-                    zurück.
-                    <p/>
-                    Die Lehrveranstaltung findet, bis auf die Abschlußklausur, ausschließlich <u>online</u> statt.
-                    Dabei kommen zwei konträre Arten der Kommunikation zum Einsatz, welche jede bewußt einen anderen Aspekt der
-                    Lehrveranstaltung optimiert.
-                    <p/>
-                    Einerseits kommen hochauflösende 1080p30
-                    Video-Streams für die Kombination von Dozent, Inhalten und einem überlagerten Head-Up-Display (HUD) zum Einsatz,
-                    die als <b>YouTube Live Events</b> im Broadcasting-Format mit einer Latenz von etwa 2 Sekunden ausgeliefert werden und
-                    bei welchem bewußt die Dozenten-Darstellungsqualität und die Features optimiert werden. Technisch bedingt können Sie bei dieser
-                    Kommunikations-Art keine direkte sprachliche Interaktion mit dem Dozenten nutzen.
-                    Über die zusätzlich zum Video-Stream eingeblendete Anwendung <b>HUDS Pad</b> können Sie
-                    allerdings textuelle Nachrichten für beliebige Fragen nutzen, an den Quizzes teilnehmen, Feedback über
-                    Emojis senden und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
-                    <p/>
-                    Andererseits kommen auch interaktive <b>Microsoft Teams Meetings</b> zum Einsatz, bei denen der
-                    Dozent als niedrigauflösende/flüssige 360p30 Video-Streams und die Inhalte als hochauflösende/unflüssige
-                    1080p5 Video-Streams getrennt und mit nur einer geringen Latenz von etwa 0.5 Sekunden ausgeliefert werden und bei welchem über ein Konferenz-Format die
-                    Teilnehmer-Sprachinteraktion optimiert wird. Diese Kommunikations-Art können Sie für die direkte
-                    sprachliche Interaktion mit dem Dozenten nutzen und wird deshalb vorallem für die <b>Sprechstunden</b> genutzt.
+                    <div class="left">
+                        In dieser Lehrveranstaltung lernen Sie alle in der Praxis relevanten Konzepte und Methoden des
+                        <b>Software Engineering</b> und dessen "Königsdisziplin" <b>Software Architecture</b> kennen
+                        &mdash; aus der spezifischen Perspektive der Software-Industrie.
+                        <p/>
+                        Ihr Dozent, <b>Dr. Ralf S. Engelschall</b>, ist Leiter von <b>msg Research</b>, einer Querschnittseinheit
+                        für Technologie, Methodik und Strategie innerhalb der <b>msg</b> Unternehmensgruppe, die
+                        eine Historie von 40 Jahren, eine Größe von knapp 10.000 Personen und einen Jahresumsatz von über
+                        1 Milliarde Euro besitzt. Er ist außerdem einer der Gründer und der Geschäftsführer der <b>Software Engineering
+                        Academy</b>, einer gemeinnützigen Organisation zur Unterstützung der Lehre von Software Engineering
+                        und Software Architecture.
+                        <p/>
+                        Als Software Architect und Software Developer zahlreicher Anwendungen, Werkzeuge,
+                        Bibliotheken und Frameworks blickt Ihr Dozent außerdem auf eine Erfahrung von über 30 Jahren in der
+                        industriellen Entwicklung von Individualsoftware und von über 25 Jahren in der Entwicklung von Open Source Software
+                        zurück.
+                    </div>
+                    <div class="right">
+                        Die Lehrveranstaltung findet, bis auf die Abschlußklausur, ausschließlich <u>online</u> statt.
+                        Dabei kommen zwei unterschiedliche Arten der Kommunikation zum Einsatz, welche jede bewußt einen
+                        anderen Aspekt der Lehrveranstaltung optimiert.
+                        <p/>
+                        Einerseits kommen hochauflösende 1080p30
+                        Video-Streams für die Kombination von Dozent, Inhalten und einem Head-Up-Display (HUD) zum Einsatz,
+                        die als <b>YouTube Live Events</b> im Broadcasting-Format mit einer Latenz von etwa 2 Sekunden ausgeliefert werden und
+                        bei welchem bewußt die Dozenten-Darstellungsqualität und die Features optimiert werden.
+                        Technisch bedingt können Sie hierbei
+                        zwar keine direkte sprachliche Interaktion mit dem Dozenten nutzen,
+                        über die zusätzlich zum Video-Stream eingeblendete Anwendung <b>HUDS Pad</b> können Sie
+                        allerdings textuelle Nachrichten für beliebige Fragen nutzen, an den Quizzes teilnehmen, Feedback über
+                        Emojis senden und ihre persönliche aktuelle Forderungs- und Gefühlslage während der Vorlesung mitteilen.
+                        <p/>
+                        Andererseits kommen auch interaktive <b>Microsoft Teams Meetings</b> zum Einsatz, bei denen der
+                        Dozent als flüssige 360p30 Video-Streams und die Inhalte als hochauflösende
+                        1080p5 Video-Streams getrennt und mit nur einer geringen Latenz von etwa 0.5 Sekunden ausgeliefert werden und bei welchem über ein Konferenz-Format die
+                        Teilnehmer-Sprachinteraktion optimiert wird. Dies können Sie für die direkte
+                        sprachliche Interaktion mit dem Dozenten nutzen und wird deshalb vorallem für die <b>Sprechstunden</b> genutzt.
+                    </div>
                 </div>
             </div>
             <div class="access">
