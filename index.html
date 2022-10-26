@@ -520,8 +520,14 @@
             </div>
             <div class="access">
                 <div class="accesstoken">
-                    Bitte geben Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> ein, um die<br/>
-                    Links zu den Online-Events (siehe unten) freizuschalten:
+                    <div v-show="!(accessToken && isValidToken)">
+                        Bitte geben Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> ein, um die<br/>
+                        Links zu den Online-Events (siehe unten) freizuschalten:
+                    </div>
+                    <div v-show="accessToken && isValidToken">
+                        Vielen Dank, daß Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> eingegeben haben.<br/>
+                        Die Links zu den Online-Events (siehe unten) sind nun freigeschaltet.
+                    </div>
                     <p/>
                     <div class="field">
                         <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }"
