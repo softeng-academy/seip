@@ -520,15 +520,6 @@
             </div>
             <div class="access">
                 <div class="accesstoken">
-                    <div v-show="!(accessToken && isValidToken)">
-                        Bitte geben Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> ein, um die<br/>
-                        Links zu den Online-Events (siehe unten) freizuschalten:
-                    </div>
-                    <div v-show="accessToken && isValidToken">
-                        Vielen Dank, daß Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> eingegeben haben.<br/>
-                        Die Links zu den Online-Events (siehe unten) sind nun freigeschaltet.
-                    </div>
-                    <p/>
                     <div class="field">
                         <input v-bind:class="{ valid: accessToken && isValidToken, invalid: accessToken && !isValidToken }"
                             type="text" width="40" v-model="accessToken" @input="exportHash">
@@ -536,6 +527,15 @@
                             <span v-show="isValidToken"><i class="fas fa-lock-open"></i></span>
                             <span v-show="!isValidToken"><i class="fas fa-lock"></i></span>
                         </div>
+                    </div>
+                    <p/>
+                    <div v-show="!(accessToken && isValidToken)">
+                        Bitte geben Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> ein, um die<br/>
+                        Links zu den Online-Events (siehe unten) freizuschalten.
+                    </div>
+                    <div v-show="accessToken && isValidToken">
+                        Vielen Dank, daß Sie hier Ihr erhaltenes <b>ACCESS TOKEN</b> eingegeben haben.<br/>
+                        Die Links zu den Online-Events (siehe unten) sind nun freigeschaltet.
                     </div>
                 </div>
             </div>
