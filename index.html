@@ -355,11 +355,11 @@
                 width: 100%;
                 height: 100%;
                 z-index: 50;
-                background-color: #000000c0;
+                background-color: #000000a0;
             }
             .session {
-                position: fixed;
-                top: 50px;
+                position: absolute;
+                top: 0px;
                 left: 0;
                 width: 100vw;
                 display: flex;
@@ -382,6 +382,14 @@
             .session .session-head .left {
                 color: #c0c0c0;
                 font-size: 20pt;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .session .session-head .middle {
+                color: #c0c0c0;
+                font-size: 20pt;
                 font-weight: 300;
                 flex-grow: 1;
                 text-align: center;
@@ -393,6 +401,13 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
+            }
+            .session .session-head .left .icon:hover {
+                color: #99ccff;
+            }
+            .session .session-head .left .icon.fullscreen {
+                padding-left: 10px;
+                padding-right: 10px;
             }
             .session .session-head .right .icon:hover {
                 color: #99ccff;
@@ -438,6 +453,10 @@
             <fullscreen v-show="session" v-if="session" class="session" v-model="fullscreen" :teleport="false" :page-only="false">
                 <div class="session-head">
                     <div class="left">
+                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div>
+                        <div class="icon close" v-on:click="closeSession"><i class="fa-regular fa-rectangle-xmark"></i></div>
+                    </div>
+                    <div class="middle">
                         {{ sessionName }}
                     </div>
                     <div class="right">
@@ -920,6 +939,9 @@
                     this.sessionURLLecture = lecture
                     this.sessionURLControl = control
                     this.session = true
+                    setTimeout(() => {
+                        window.scrollTo(0, 0)
+                    }, 100)
                     return true
                 },
                 closeSession () {
