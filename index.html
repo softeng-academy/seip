@@ -405,7 +405,7 @@
             .session .session-head .left .icon:hover {
                 color: #99ccff;
             }
-            .session .session-head .left .icon.fullscreen {
+            .session .session-head .left .icon.close {
                 padding-left: 10px;
                 padding-right: 10px;
             }
@@ -453,8 +453,8 @@
             <fullscreen v-show="session" v-if="session" class="session" v-model="fullscreen" :teleport="false" :page-only="false">
                 <div class="session-head">
                     <div class="left">
-                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div>
                         <div class="icon close" v-on:click="closeSession"><i class="fa-regular fa-rectangle-xmark"></i></div>
+                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div>
                     </div>
                     <div class="middle">
                         {{ sessionName }}
