@@ -46,13 +46,21 @@
             }
             .header {
                 background-color: #f0f0f0;
-                text-align: center;
+                text-align: left;
                 padding-top: 10px;
                 padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                height: 220px;
             }
             .header .header1 {
                 font-size: 20pt;
                 font-weight: 300;
+                width: 1000px;
+                position: relative;
             }
             .header .header2 {
                 font-size: 24pt;
@@ -62,11 +70,13 @@
                 margin-bottom: 8px;
                 letter-spacing: -0.5px;
                 color: #444444;
+                width: 1000px;
             }
             .header .header3 {
                 font-size: 20pt;
                 font-weight: 300;
                 margin-bottom: 16px;
+                width: 1000px;
             }
             .logos {
                 background: #ffffff;
@@ -468,6 +478,39 @@
             .banner a:hover {
                 color: #ffffff;
             }
+            .banner2 {
+                position: absolute;
+                top: 420px;
+                left: 80px;
+                width: auto;
+                z-index: 1000;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px 1px #00000080;
+                background-color: #00000080;
+                color: #ffffff;
+                font-size: 12pt;
+                transform: rotate(-3deg);
+            }
+            .banner2 img {
+                width: 350px;
+            }
+            .banner3 {
+                position: absolute;
+                top: -10px;
+                right: 20px;
+                z-index: 1000;
+                padding: 8px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px 1px #00000080;
+                background-color: #00000080;
+                color: #ffffff;
+                font-size: 12pt;
+                transform: rotate(+3deg);
+            }
+            .banner3 img {
+                width: 350px;
+            }
         </style>
     </head>
     <body>
@@ -504,6 +547,9 @@
             </fullscreen>
             <div class="header">
                 <div class="header1">
+                    <div class="banner3">
+                        <a href="https://gi.de/meldung/ralf-engelschall-erhaelt-balzert-preis"><img src="img/logo-balzert-preis-rse.png"></a>
+                    </div>
                     TUM Lehrveranstaltung<br/>
                 </div>
                 <div class="header2">
@@ -553,9 +599,16 @@
                         Die Lehrveranstaltung besteht aus einer Vorlesung mit 10 Modulen und jeweils 3 Stunden, komprimiert auf nur 5 Wochen in 2023/Q4 des WS23/24.
                         Zusätzlich werden Sprechstunden angeboten.
                         <p/>
+                        Die Lehrveranstaltung basiert auf dem Lehrkonzept der <a href="https://multimediale-didaktik.de">Multimedialen Didaktik</a>,
+                        welche u.a. im Kontext dieser Lehrveranstaltung entwickelt wurde und für die der Dozent den
+                        <a href="https://gi.de/balzert-preis">Balzert-Preis 2023</a>
+                        der <a href="https://gi.de/">Gesellschaft für Informatik (GI)</a>
+                        "für seinen herausragenden Beitrag zur Vermittlung der Informatik"
+                        verliehen bekommen hat.
+                        <p/>
                         <div class="headline">IHR DOZENT</div>
-                        Ihr Dozent, <b>Dr. Ralf S. Engelschall</b>, ist Leiter von <b>msg Research</b>, einer Querschnittseinheit
-                        für Technologie, Methodik und Strategie innerhalb der <a href="http://www.msg.group"><b>msg</b></a> Unternehmensgruppe, die
+                        Ihr Dozent, <b>Dr. Ralf S. Engelschall</b>, ist CTO der <a href="http://www.msg.group"><b>msg</b></a> und Leiter von <b>msg Research</b>, einer Querschnittseinheit
+                        für Technologie, Methodik und Strategie innerhalb der msg Unternehmensgruppe, die
                         eine Historie von 40 Jahren, eine Größe von knapp 10.000 Personen und einen Jahresumsatz von über
                         1 Milliarde Euro besitzt. Er ist außerdem einer der Gründer und der Geschäftsführer der <b>Software Engineering
                         Academy</b>, einer gemeinnützigen Organisation zur Unterstützung der Lehre von Software Engineering
@@ -576,6 +629,7 @@
                         Video-Streams für die Kombination von Dozent, Inhalten und einem <a href="https://github.com/rse/huds-hud-training">Head-Up-Display (HUD)</a> zum Einsatz,
                         die als <b><a href="https://www.youtube.com/">YouTube</a> Live Events</b> im Broadcasting-Format mit einer Latenz von etwa 2 Sekunden ausgeliefert werden und
                         bei welchem bewußt die Dozenten-Darstellungsqualität und die Features optimiert werden.
+                        <p/>
                         Technisch bedingt können Sie hierbei
                         zwar keine direkte sprachliche Interaktion mit dem Dozenten nutzen,
                         über die zusätzlich zum Video-Stream eingeblendete Anwendung <a href="https://github.com/rse/huds-pad"><b>HUDS Pad</b></a> können Sie
