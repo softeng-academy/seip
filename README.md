@@ -1,4 +1,4 @@
 
-Software Engineering in der industriellen Praxis (SEIP)
-=======================================================
+Software Engineering in Industrial Practice (SEIP)
+==================================================
 
