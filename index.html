@@ -332,8 +332,11 @@
             }
             .footer .testdrive {
                 display: block;
+                position: fixed;
+                left: 0px;
+                bottom: 0px;
                 width: 100px;
-                height: 20px;
+                height: 100px;
             }
             .footer a, a:visited {
                 color: #336699;
@@ -700,11 +703,9 @@
                             <td class="time">14:00-14:15</td>
                             <td class="name">Intro</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     LECTURE (Teams)</a>
-                                -->
                             </td>
                             <td class="material">
                                 <!--
@@ -718,10 +719,8 @@
                             <td class="time">14:15-17:00</td>
                             <td class="name">Module 01</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 01', 'U2FsdGVkX19r2PyyAIB2lmffR5PoQPFK9Vgwe9/yqYQ38LDCvERwZ48Ne77AAxzwXx+5iW0xqxWmPrUZ1K6ZWIQUr7eOboc4RPrj54pkjuo=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 01', 'U2FsdGVkX19ON/HdmpIqvZdtsNaZ4xYyeUFQmSSxHUAEkDCMvvj5o9o0GQg7VhK3wmpr2qIAe5nXordkisutf2eyxRD5mEI/LXptycDplP0=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -738,10 +737,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 02</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 02', 'U2FsdGVkX1/CNrMgwMphmv2RmZKGRkK5qT8VOE7T+IZORYILqqnU4K54X5f8KPp1T+CcHjouh0UWeulQMDpHHGP1HSZOZgO9tycgMs4iAts=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 02', 'U2FsdGVkX18eOjbTiRl0g+ySRn2m5nhx8qjBYrlntucb7fLSzy6y61B9W/AKQjVHtX4/9Wg4+4qHPUQPvd6bx6W6LSG9mWnSw6LlmEwG0Qk=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -758,10 +755,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 03</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 03', 'U2FsdGVkX1/HroVPkt/AS5VXpl8mHiwQpNz2GOLuT9otjqR8t9Uy2KF/t0+k1/+ppBPjHlNNjLKJ4/+wY1wxqELTmNHYTIvO7JlC60MXcdA=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 03', 'U2FsdGVkX1+Mz0Z1k63e97Nhpeg8Ov4TF3LiHexP72xnXlerPTz3QgVvI5gLKrzozDeChIIByQUzdqN52UGNqwMif2qdSfA6tRFdf+zAuJE=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -778,10 +773,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 04</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 04', 'U2FsdGVkX1+YVKtyQXgtCYgokz7/CLg84kqj+9WJipwPxw93DkETbM476ySJNTnrc+pdhAvP16EBR9oG8kUt2jyHaLXv6oEkvExiwUQ/axs=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 04', 'U2FsdGVkX1/vENAVik0tzNcBZ+G8HzlY8cshPLp7lW+QTm6hbDjk06jUPP1iwMvgd9whPqiO6Eyigk5WiNcv/19qPQrLme7sio+QgK22tbE=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -798,10 +791,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 05</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 05', 'U2FsdGVkX19OXjan8C53W33Rou1IYF19KKj4WhAuKDMGh2K3zjl3hzlPXlB+I4ZakqiVy02g7lYzPJvLED0VBgfPfmFu0DYi4nVqb9v+O1U=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 05', 'U2FsdGVkX19QdoJrAXdAWFbbgpWSexJYndUJEN9fkf+KUqgg58dEy7XhoDfLlo19mR3z8E3bVmJMhAeibeAmhylGKg2GbNCLOmB2x0AqJEU=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -818,10 +809,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 06</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 06', 'U2FsdGVkX1+vCZhK8rmlLLsI71Rcb+l/aKLrPTk0YPPOVPH/wm7UzYBdytXEKrGV+wmcA4wETiage0KggXQwxlInDypx8beDijTPreDEggE=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 06', 'U2FsdGVkX1+AhQWhPYcZ77uN9uM7/56IjOI+8c3Bx+Hums3QYHEn2JseG1kmP7OaKXLZELpzIfI8zURkeAmYbkBoN0aX7zRcnem5UCrLVVU=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -838,10 +827,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 07</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 07', 'U2FsdGVkX1/zpbrJgSaWaYdB3DViGRjUbuOcnvHfGlyToHgW0AR9/HT3E1KUKb5GR6CFExqe5CAxZsD0NTv4kl/Gt5EEQfoPjO7CumHmNCE=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 07', 'U2FsdGVkX19tzioMA6dLCtwInEoAawDwhQ0oJnJhHao1eJNDO9rpx3MgQpz+/HtXxbwo4L27zG3fej7RaO/8m4Q1qVcGoVO4A3sNMYxYQYQ=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -858,10 +845,8 @@
                             <td class="time">14:00-15:40</td>
                             <td class="name">Module 08</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 08', 'U2FsdGVkX1/J/z7LWCueE6XolQ1lkQ7cX6I7UvmBscBaMV/rfLEkQ2WGTAK25CnzZqsD/Z9DgVQmiIlk7bM0K5hACqolKEts7dbdUsD2VFg=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 08', 'U2FsdGVkX18ORqcLXferYhSVxIcZPy4jw84xbpKkKdWm0Kbqa2zBT9DEWEg7nDfsW5yI+3N8gQbnr+kjheYejv9fRY+C85LCYfVqZpir7uE=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -878,10 +863,8 @@
                             <td class="time">14:00-17:00</td>
                             <td class="name">Module 09</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 09', 'U2FsdGVkX1/lQnxBqBD3R8KMOK9vEeWLE+t1P7TzF97Qo994k651vzFh/N+1Tg8h+iXKwZoZkbV3WS7+nRbbYQ2eNeWEj9ZKD4Jo7WJjDps=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 09', 'U2FsdGVkX1/AtttT7T3LyWkBDojxxXZmw74tnBsmMBjEyNBrQ+WACBTxn9a2jPNBXEz6oMSs1bhC/+LNTFJzBBLo5Xxj5lU4BdbUpEYh/fk=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -898,10 +881,8 @@
                             <td class="time">14:00-15:10</td>
                             <td class="name">Module 10</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 10', 'U2FsdGVkX199vFdI9dEWnyRMNFAHtn4lUpPJPybJ77dHZWWz3U8HMb+RSLtbp81m1JYqGgwi5SRdXfVZIkUNyEnQZJ6Dw+LbVkWKjtML+JQ=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
-                                -->
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: Module 10', 'U2FsdGVkX1/Q4q+l99Se1DCCBxRIBOq61QTKq6N7a5GtJAZ5URpxVvXA5bJ0p0FU1EVSDPgVoIF+cudSc29ya8GucehP351vIBorc34WxoE=', 'U2FsdGVkX19JsSkHvcfAlFXtxf40CPRF9Zy0Rx1Ap9YM4/HGMSJMSecLB6ARpH18HjBQqXwCTOM3FRfq70JHBoFOqN5RLlF/x+P61geGjlQ=')">LECTURE (YouTube)</a>
                             </td>
                             <td class="material">
                                 <!--
@@ -918,11 +899,9 @@
                             <td class="time">15:10-16:30</td>
                             <td class="name">Guest</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     LECTURE (Teams)</a>
-                                -->
                             </td>
                             <td class="material">
                                 <!--
@@ -937,11 +916,9 @@
                             <td class="time">16:30-17:00</td>
                             <td class="name">Hints</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="youtube gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="youtube" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     LECTURE (Teams)</a>
-                                -->
                             </td>
                             <td class="material">
                                 <!--
@@ -969,12 +946,10 @@
                             <td class="date">2025-10-16</td>
                             <td class="time">17:00-18:00</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="sprechstunde gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     CONSULTATION HOUR (Teams)
                                 </a>
-                                -->
                             </td>
                         </tr>
                         <tr class="row2">
@@ -982,12 +957,10 @@
                             <td class="date">2025-10-23</td>
                             <td class="time">17:00-18:00</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="sprechstunde gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     CONSULTATION HOUR (Teams)
                                 </a>
-                                -->
                             </td>
                         </tr>
                         <tr class="row1">
@@ -995,12 +968,10 @@
                             <td class="date">2025-10-30</td>
                             <td class="time">17:00-18:00</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="sprechstunde gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     CONSULTATION HOUR (Teams)
                                 </a>
-                                -->
                             </td>
                         </tr>
                         <tr class="row2">
@@ -1008,12 +979,10 @@
                             <td class="date">2025-11-06</td>
                             <td class="time">17:00-18:00</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="sprechstunde gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     CONSULTATION HOUR (Teams)
                                 </a>
-                                -->
                             </td>
                         </tr>
                         <tr class="row1">
@@ -1021,12 +990,10 @@
                             <td class="date">2025-11-13</td>
                             <td class="time">17:00-18:00</td>
                             <td class="event">
-                                <!--
-                                <a target="_blank" class="sprechstunde gone" v-bind:class="{ invalid: !isValidToken }"
-                                    v-bind:href="grantAccess('U2FsdGVkX19DjNAq9xkmc1+4hL2FauFJfV16k93wXtwtRxUiIblBQeeVHQhL5l/MfGfUeZwcE2aZ8ZF2/Rt2qNAl6ziOK98I/NiuHzLUPD1leutKxtK7bENByYEQjSZa3AbvwqE5ZxQAlGEJHZVR3OeO9t8N4iduY2rkEWwHrLL9QEju+z6vPYE9AlMKTcZINqyG8X2EMh7SVnQVOPc1O31w4DFS3c0wv8jfbAxhJjtJwVg2rdoraxGSGGN/lpmQYlNlHDFENAMStm4mne4qm+QOAKLzUmTp9U/AN/IzKcZinvGBdDFOpJW9feOEssNzYrXye/BssY8CoSThxGtBctJBYv1s6jvt/VF0S1FGMMc=')">
+                                <a target="_blank" class="sprechstunde" v-bind:class="{ invalid: !isValidToken }"
+                                    v-bind:href="grantAccess('U2FsdGVkX1+/yb3YNTzMhsFwxLYG5ce15mFz/tbsjPq4/B7bAO5DDSYhZs+fhIadQW20qD4tGr3yODN/xuMw0o8eJsxaKY44oGIqnwu6BfPhcxWA74d49Tiv0B2kAQu4jp6aBMStISqIigPucliWU28pY7ISfp2YfM0aQ0dnJjh4webyECzajj6lMaOs6sKjcU9ynQGbJIRNqeeLi1YUWlN4D8apv8D2IvJL8FEaGyzAqm41dmvRHEyvl8TeGIAkiXQBjqFWTUeSCbCGyXP1U8hawQyVOKoB2PEc4ebkRQhmnz5vLRk0/Gu2AA7hQE0zL9/qYPhG3LcOjR2aQk8qPr2MuJLpLNmfoyrVBDKDRHE=')">
                                     CONSULTATION HOUR (Teams)
                                 </a>
-                                -->
                             </td>
                         </tr>
                     </table>
@@ -1051,10 +1018,8 @@
                 </div>
             </div>
             <div class="footer">
-                <!--
                 <a target="_blank" class="testdrive" v-bind:class="{ invalid: !isValidToken }"
-                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: TEST-DRIVE', 'U2FsdGVkX1+F2YJlDnn62EPu6Pqc9fgO6S/QvOP9y5uVtN5NNedIzID/MeCmmTlhhHU5749uN/vhQtEFQPE4qReIegN+TbFZDGq/czLwIJw=', 'U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">&nbsp;</a>
-                -->
+                    href="" v-on:click.stop.prevent="openSession('TUM SEIP WS25/26: TEST-DRIVE', 'U2FsdGVkX1+uQE3oui2ngvDSODf2y2BwusxlMM7UW/4plfnUh0vXINqrWqNKWb1NLOZC9Ab1MfDpjtqKPCpMsK6guu1ikTnKTQxlu2vC1/I=', 'U2FsdGVkX19FOdbiDLdtplb02ZV6mfgSyeQ0HzRq622JvJpzz0CvbJMqjrXaG+6JRZUU2Od62Pb4TDzz5dBcLA==')">&nbsp;</a>
                 Your Goodie:<br/><a target="_blank" href="pdf/TUM-SEIP-MakingOf.pdf"><b>MAKING OF SEIP</b></a>
             </div>
                 <!--
