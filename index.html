@@ -451,15 +451,11 @@
                 border: 0;
                 aspect-ratio: 16 / 9;
             }
-
-            /*  for containers wider than 16:9, constrain by height  */
             @container (min-aspect-ratio: 16/9) {
                 .session .session-body .session-lecture iframe {
                     height: 100%;
                 }
             }
-
-            /*  for containers narrower than 16:9, constrain by width  */
             @container (max-aspect-ratio: 16/9) {
                 .session .session-body .session-lecture iframe {
                     width: 100%;
