@@ -11,6 +11,7 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue-fullscreen@3.1.3/dist/index.umd.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@4.2.2/dist/bundles/anime.umd.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/js/all.min.js"></script>
         <style type="text/css">
@@ -369,6 +370,7 @@
                 top: 0px;
                 left: 0;
                 width: 100vw;
+                height: 100vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -376,9 +378,10 @@
                 background-color: #111111;
                 z-index: 1000;
                 box-shadow: 0 0 30px #000000;
+                overflow: hidden;
             }
             .session .session-head {
-                width: calc(100vw - 40px);
+                width: calc(100vw - 20px);
                 padding: 10px 10px 0 10px;
                 display: flex;
                 flex-direction: row;
@@ -411,39 +414,59 @@
             .session .session-head .left .icon:hover {
                 color: #99ccff;
             }
-            .session .session-head .left .icon.close {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
             .session .session-head .right .icon:hover {
                 color: #99ccff;
             }
-            .session .session-head .right .icon.close {
-                padding-left: 10px;
-                padding-right: 10px;
+            .session .session-head .right .icon.fullscreen {
+                padding-right: 5px;
+            }
+            .session .session-head .right .icon.pad {
+                padding-right: 5px;
             }
             .session .session-body {
-                width: calc(100vw - 40px);
-                padding: 20px;
+                width: 100vw;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
+                overflow: hidden;
+                user-select: none;
             }
             .session .session-body .session-lecture {
                 flex-grow: 1;
-                aspect-ratio: 16 / 9;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                container-type: size;
             }
             .session .session-body .session-lecture iframe {
                 border: 0;
-                width: 100%;
-                height: 100%;
+                aspect-ratio: 16 / 9;
+            }
+
+            /*  for containers wider than 16:9, constrain by height  */
+            @container (min-aspect-ratio: 16/9) {
+                .session .session-body .session-lecture iframe {
+                    height: 100%;
+                }
+            }
+
+            /*  for containers narrower than 16:9, constrain by width  */
+            @container (max-aspect-ratio: 16/9) {
+                .session .session-body .session-lecture iframe {
+                    width: 100%;
+                }
             }
             .session .session-body .session-control {
                 aspect-ratio: 9 / 16;
-                width: 390px;
-                padding-left: 10px;
+                width: 400px;
+                margin-left: 0;
+                flex-shrink: 0;
+                overflow: hidden;
             }
             .session .session-body .session-control iframe {
                 border: 0;
@@ -518,15 +541,15 @@
             <fullscreen v-show="session" v-if="session" class="session" v-model="fullscreen" :teleport="false" :page-only="false">
                 <div class="session-head">
                     <div class="left">
-                        <div class="icon close" v-on:click="closeSession"><i class="fa-regular fa-rectangle-xmark"></i></div>
-                        <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div>
+                        <div class="icon close" v-on:click="closeSession"><i class="fa-solid fa-rectangle-xmark"></i></div>
                     </div>
                     <div class="middle">
                         {{ sessionName }}
                     </div>
                     <div class="right">
+                        <div class="icon pad" v-on:click="togglePad"><i class="fa-solid fa-tablet-screen-button"></i></div>
                         <div class="icon fullscreen" v-on:click="toggleFullscreen"><i class="fa-solid fa-maximize"></i></div>
-                        <div class="icon close" v-on:click="closeSession"><i class="fa-regular fa-rectangle-xmark"></i></div>
+                        <div class="icon close" v-on:click="closeSession"><i class="fa-solid fa-rectangle-xmark"></i></div>
                     </div>
                 </div>
                 <div class="session-body">
@@ -1050,7 +1073,8 @@
                 sessionName: "",
                 sessionURLLecture: "",
                 sessionURLControl: "",
-                fullscreen: false
+                fullscreen: false,
+                padVisible: true
             })),
             computed: {
                 isValidToken () {
@@ -1083,6 +1107,32 @@
                 toggleFullscreen () {
                     this.fullscreen = !this.fullscreen
                 },
+                togglePad () {
+                    const padElement     = document.querySelector(".session-control")
+                    const lectureElement = document.querySelector(".session-lecture")
+                    if (!padElement || !lectureElement)
+                        return
+                    if (this.padVisible) {
+                        /*  hide pad: slide control to the right, shrink its margin  */
+                        anime.animate(padElement, {
+                            translateX:  [ 0, 400 ],
+                            marginLeft:  [ 0, -400 ],
+                            duration:    1000,
+                            ease:        "inSine"
+                        })
+                        this.padVisible = false
+                    }
+                    else {
+                        /*  show pad: slide control from the right, expand its margin  */
+                        anime.animate(padElement, {
+                            translateX:  [ 400, 0 ],
+                            marginLeft:  [ -400, 0 ],
+                            duration:    1000,
+                            ease:        "outSine"
+                        })
+                        this.padVisible = true
+                    }
+                },
                 grantAccess (cipherText) {
                     let originalText = ""
                     try {
@@ -1107,6 +1157,7 @@
                     this.sessionName = name
                     this.sessionURLLecture = lecture
                     this.sessionURLControl = control
+                    this.padVisible = true
                     this.session = true
                     setTimeout(() => {
                         window.scrollTo(0, 0)
