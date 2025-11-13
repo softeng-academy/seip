@@ -503,7 +503,7 @@
                 padding: 20px;
                 border-radius: 10px;
                 box-shadow: 0px 0px 10px 1px #00000080;
-                background-color: #cc3333f0;
+                background-color: #cc3333;
                 color: #ffffff;
                 font-size: 12pt;
                 transform: rotate(-3deg);
@@ -1057,7 +1057,6 @@
                 im Themengebiet <i>Software Engineering</i> &mdash; und insbesondere in der "Königsdisziplin" <i>Software Architecture</i> &mdash;
                 haben, kontaktieren Sie bitte direkt <a href="mailto:ralf.engelschall@msg.group">Dr. Ralf S. Engelschall</a>.
             </div>
-                -->
             <div class="banner">
                 Please follow your lecturer
                 <a href="https://www.linkedin.com/in/engelschall/">Dr. Ralf S. Engelschall</a>
@@ -1066,6 +1065,18 @@
                 or his numerous <a href="https://github.com/rse/">Open Source Software</a> activities like
                 <a href="https://github.com/rse/huds-hud-training">HUDS HUD Training</a> and
                 <a href="https://github.com/rse/huds-pad">HUDS Pad</a> you are working with during SEIP lecture.
+            </div>
+                -->
+            <div ref="banner" class="banner">
+                This block course already finished 2025-11-14.
+                Hopefully, you enjoyed it.
+                Please take the time to still <b>rate this course in the official evaluation of TUM</b>!
+                <p/>
+                Especially, if you want to support teaching assignments of such a lecture course
+                to externals like <i>Dr. Ralf S. Engelschall</i></a>,
+                please <b>give it a positive rating</b> and perhaps even <b>write down one or two positive prose statements</b> in
+                your evaluation. <i>THANKS!</i>
+                <p/>
             </div>
         </div>
     </body>
@@ -1092,6 +1103,18 @@
                     this.importHash()
                 }, false)
                 this.importHash()
+            },
+            mounted () {
+                const timeline = anime.createTimeline({ loop: true })
+                timeline.add(this.$refs.banner, {
+                    duration: 2000,
+                    rotate:   [ "-3deg", "-6deg", "-3deg" ],
+                    scale:    [ 1.0, 1.2, 1.0 ],
+                    ease:     "inOutSine"
+                })
+                .add({
+                    duration: 4000
+                })
             },
             methods: {
                 importHash () {
