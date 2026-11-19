@@ -238,13 +238,10 @@
                 width: 100vw;
                 padding-top: 40px;
                 padding-bottom: 40px;
-                display: flex;
-                flex-direction: row;
+                display: grid;
+                grid-template-columns: auto;
                 justify-content: center;
-                align-items: top;
-            }
-            .roster .main {
-                margin-right: 40px;
+                row-gap: 40px;
             }
             .roster .event .youtube {
                 color: #ffffff;
@@ -266,7 +263,8 @@
             }
             .roster .material .agenda,
             .roster .material .content,
-            .roster .material .script {
+            .roster .material .script,
+            .roster .material .question {
                 color: #ffffff;
                 background-color: #336699;
                 padding: 1px 6px;
@@ -280,7 +278,8 @@
                 background-color: #666666;
             }
             .roster .material .content:hover,
-            .roster .material .script:hover {
+            .roster .material .script:hover,
+            .roster .material .question:hover {
                 background-color: #6699cc;
                 color: #ffffff;
             }
@@ -325,20 +324,6 @@
             }
             .roster .sprechstunde.invalid {
                 background-color: #990000;
-            }
-            @media (max-width: 1200px) {
-                .roster {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                .roster .main {
-                    margin-left: 50px;
-                    margin-right: 0;
-                    margin-bottom: 40px;
-                }
-                .roster .side {
-                    margin-left: 50px;
-                }
             }
             .footer {
                 background-color: #f0f0f0;
@@ -766,6 +751,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-01-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-01-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row1">
@@ -782,6 +768,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-02-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-02-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row2">
@@ -798,6 +785,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-03-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-03-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-03-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-03-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row1">
@@ -814,6 +802,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-04-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-04-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-04-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-04-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row2">
@@ -830,6 +819,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-05-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-05-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-05-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-05-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row1">
@@ -846,6 +836,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-06-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-06-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-06-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-06-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row2">
@@ -862,6 +853,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-07-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-07-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-07-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-07-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row1">
@@ -878,6 +870,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-08-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-08-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-08-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-08-Questions.md" class="question">QUESTION</a>
                             </td>
                         </tr>
                         <tr class="row2">
@@ -927,6 +920,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-11-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-11-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-11-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-11-Questions.md" class="question">QUESTION</a>
                                 -->
                             </td>
                         </tr>
@@ -945,6 +939,7 @@
                                 <a target="_blank" href="pdf/TUM-SEIP-12-Content.pdf" class="content">CONTENT</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-12-Script-EN.pdf" class="script">SCRIPT (EN)</a>
                                 <a target="_blank" href="pdf/TUM-SEIP-12-Script-DE.pdf" class="script">SCRIPT (DE)</a>
+                                <a target="_blank" href="pdf/TUM-SEIP-12-Questions.md" class="question">QUESTION</a>
                                 -->
                             </td>
                         </tr>
