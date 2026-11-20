@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="1.0">
+    <head>
+        <title>Ralf S. Engelschall's News Channels</title>
+        <dateCreated>2026-11-20 16:11:25 +0000</dateCreated>
+    </head>
+    <body>
+        <outline text="Leadership">
+            <outline htmlUrl="https://www.reddit.com/r/Leadership" xmlUrl="http://127.0.0.1:8099/r/Leadership.rss" type="rss" description="👁️‍🗨️ Guidance and wisdom, a leader's stand, breaking walls, uniting hands." text="Reddit Leadership"/>
+            <outline htmlUrl="https://www.reddit.com/r/managers" xmlUrl="http://127.0.0.1:8099/r/managers.rss" type="rss" description="A subreddit dedicated to discussions about being a manager, supervisor, boss, or business owner." text="Reddit Managers"/>
+        </outline>
+        <outline text="Machine Learning">
+            <outline htmlUrl="https://www.anthropic.com/engineering" xmlUrl="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml" type="rss" description="Inside the team building reliable AI systems" text="Anthropic Engineering Blog"/>
+            <outline htmlUrl="https://www.reddit.com/r/ClaudeAI" xmlUrl="http://127.0.0.1:8099/r/ClaudeAI.rss" type="rss" description="This is a Claude and Claude Code discussion subreddit to help you make a fully informed decision about using Claude and Claude Code to best effect for your own purposes. ¹⌉ Anthropic does not control or operate this subreddit or endorse views expressed here. ²⌉ If your problem requires Anthropic's help, visit https://support.anthropic.com/ This subreddit is not the right place to fix your account issues. ³⌉ For more help, check the resources below. ⁴⌉ Please read the rules before posting." text="ClaudeAI"/>
+            <outline htmlUrl="https://www.reddit.com/r/claudeskills" xmlUrl="http://127.0.0.1:8099/r/claudeskills.rss" type="rss" description="Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks. You no longer need a folder full on prompts, you upload once and simply ask Claude to use that skill whenever you need it." text="claudeskills"/>
+            <outline htmlUrl="https://www.reddit.com/r/ClaudeCode" xmlUrl="http://127.0.0.1:8099/r/ClaudeCode.rss" type="rss" description="a community for building, learning, and sharing with claude code." text="ClaudeCode"/>
+            <outline htmlUrl="https://www.reddit.com/r/AI_Agents" xmlUrl="http://127.0.0.1:8099/r/AI_Agents.rss" type="rss" description="A place for discussion around the use of AI Agents and related tools. AI Agents are LLMs that have the ability to &quot;use tools&quot; or &quot;execute functions&quot; in an autonomous or semi-autonomous (also known as human-in-the-loop) fashion. Follow our event calendar: https://lu.ma/oss4ai Join us on Discord! https://discord.gg/6tGkQcFjBY" text="AI Agents"/>
+            <outline htmlUrl="https://www.anthropic.com/research" xmlUrl="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml" type="rss" description="Latest research from Anthropic" text="Anthropic Research"/>
+            <outline htmlUrl="https://huggingface.co/blog" xmlUrl="https://huggingface.co/blog/feed.xml" type="rss" description="The Hugging Face blog" text="Hugging Face - Blog"/>
+            <outline htmlUrl="https://www.kdnuggets.com" xmlUrl="https://www.kdnuggets.com/tag/natural-language-processing/feed" type="rss" description="Data Science, Machine Learning, AI &amp; Analytics" text="Natural Language Processing – KDnuggets"/>
+            <outline htmlUrl="https://ollama.com/blog" xmlUrl="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_ollama.xml" type="rss" description="Latest updates from Ollama" text="Ollama Blog"/>
+            <outline htmlUrl="https://www.reddit.com/r/machinelearningnews/" xmlUrl="http://127.0.0.1:8099/r/machinelearningnews/.rss" type="rss" description="Community of AI, Machine Learning, Data Science, Deep Learning and Robotics and Physical AI Professionals" text="Reddit Machine Learning News"/>
+            <outline htmlUrl="http://sujitpal.blogspot.com/" xmlUrl="http://feeds.feedburner.com/SalmonRun" type="rss" description="Swimming upstream on the technology tide, one technology at a time. A collection of articles, tips, and random musings on application development and system design." text="Salmon Run"/>
+        </outline>
+        <outline text="Software Engineering">
+            <outline htmlUrl="https://www.reddit.com/r/softwaredevelopment" xmlUrl="http://127.0.0.1:8099/r/softwaredevelopment.rss" type="rss" description="Software development methodologies, techniques, and tools. Not to be confused with programming. Covering Agile, RUP, Waterfall, Crystal, Extreme Programming, Scrum, Lean, Kanban and more." text="Software Development - methodologies, techniques, and tools. Covering Agile, RUP, Waterfall + more!"/>
+            <outline htmlUrl="https://www.reddit.com/r/softwarearchitecture" xmlUrl="http://127.0.0.1:8099/r/softwarearchitecture.rss" type="rss" description="Dive into discussions on designing, structuring, and optimizing software systems. Share insights on architectural patterns, best practices, and real-world experiences." text="Software Architecture"/>
+            <outline htmlUrl="https://www.reddit.com/r/SoftwareEngineering" xmlUrl="http://127.0.0.1:8099/r/SoftwareEngineering.rss" type="rss" description="" text="Software Engineering (1)"/>
+            <outline htmlUrl="https://dzone.com/integration" xmlUrl="https://feeds.dzone.com/integration" type="rss" description="Recent posts in Integration on DZone.com" text="Architects Zone - Architectural Design Patterns &amp; Best Practices"/>
+            <outline htmlUrl="http://www.artima.com/spotlight/" xmlUrl="https://www.artima.com/spotlight/feeds/spotlight.rss" type="rss" description="
+Highlights of the content flowing through Artima Developer.
+    " text="Artima Developer Spotlight"/>
+            <outline htmlUrl="https://dzone.com" xmlUrl="https://feeds.dzone.com/publications" type="rss" description="Recent publications on DZone.com" text="DZone Refcardz - Latest Releases"/>
+            <outline htmlUrl="https://dzone.com" xmlUrl="https://feeds.dzone.com/home" type="rss" description="Recent posts on DZone.com" text="dzone.com: latest front page"/>
+            <outline htmlUrl="https://github.blog/" xmlUrl="https://github.blog/feed/" type="rss" description="Updates, ideas, and inspiration from GitHub to help developers build and design software." text="Github Blog"/>
+            <outline htmlUrl="https://github.blog/engineering/" xmlUrl="https://github.blog/engineering.atom" type="rss" description="Updates, ideas, and inspiration from GitHub to help developers build and design software." text="GitHub Engineering"/>
+            <outline htmlUrl="https://www.infoq.com" xmlUrl="https://feed.infoq.com/architecture/" type="rss" description="InfoQ Architecture feed" text="InfoQ - Architecture"/>
+            <outline htmlUrl="https://www.infoq.com" xmlUrl="https://feed.infoq.com/Design/" type="rss" description="InfoQ Design feed" text="InfoQ - Design"/>
+            <outline htmlUrl="https://www.infoq.com" xmlUrl="https://feed.infoq.com/Devops/" type="rss" description="InfoQ DevOps feed" text="InfoQ - DevOps"/>
+            <outline htmlUrl="https://changelog.com/podcast" xmlUrl="https://changelog.com/podcast/feed" type="rss" description="Software's best weekly news brief, deep technical interviews &amp; talk show." text="The Changelog: Software Dev &amp; Open Source"/>
+        </outline>
+        <outline text="Web Technology">
+            <outline htmlUrl="https://www.echojs.com" xmlUrl="https://www.echojs.com/rss" type="rss" description="Description pending" text="Echo JS"/>
+            <outline htmlUrl="https://frontendfoc.us/" xmlUrl="https://frontendfoc.us/rss/24hoh614" type="rss" description="A once–weekly roundup of the best front-end news, articles and tutorials. HTML, CSS, WebGL, Canvas, browser tech, and more." text="Frontend Weekly Archive Feed"/>
+            <outline htmlUrl="http://pipes.yahoo.com/pipes/pipe.info?_id=647030be6aceb6d005c3775a1c19401c" xmlUrl="https://feeds.feedburner.com/html5rocks" type="rss" description="Pipes Output" text="HTML5Rocks"/>
+            <outline htmlUrl="https://www.infoq.com" xmlUrl="https://feed.infoq.com/TypeScript/news/" type="rss" description="InfoQ TypeScript News feed" text="InfoQ - TypeScript - News"/>
+            <outline htmlUrl="https://javascriptweekly.com/" xmlUrl="https://javascriptweekly.com/rss/1878p65j" type="rss" description="A newsletter of JavaScript articles, news and cool projects" text="JavaScript Weekly Archive Feed"/>
+            <outline htmlUrl="https://changelog.com/jsparty" xmlUrl="https://changelog.com/jsparty/feed" type="rss" description="Your weekly celebration of JavaScript and the web. Current panelists: Jerod Santo, Kevin Ball (KBall), Nick Nisi, Chris Hiller, Amal Hussein &amp; Amy Dutton.
+
+Past panelists: Suz Hinton, Feross Aboukhadijeh, Amelia Wattenberger, Divya Sasidharan, Alex Sexton, Rachel White, Emma Bostian, Ali Spittel, Mikeal Rogers &amp; Jessica Sachs.
+
+We talk about the web platform (Chrome, Safari, Edge, Firefox, Brave, etc), front-end frameworks (ReactJS, SolidJS, Svelte, VueJS, AngularJS, etc), JavaScript and TypeScript runtimes (Node, Deno, Bun), web animation, SVG, TailwindCSS, robotics, IoT, and much more. If JavaScript and/or the web touch your life, this show’s for you.
+
+Some people search for JSParty and can't find the show, so now the string JSParty is in our description too." text="JS Party: JavaScript &amp; Web Dev"/>
+            <outline htmlUrl="https://jsfeeds.com" xmlUrl="https://jsfeeds.com/feed" type="rss" description="JSFeeds" text="JSFeeds"/>
+            <outline htmlUrl="https://devblogs.microsoft.com/typescript/" xmlUrl="https://devblogs.microsoft.com/typescript/feed/" type="rss" description="The official blog of the TypeScript team." text="Microsoft TypeScript"/>
+            <outline htmlUrl="https://nodeweekly.com/" xmlUrl="https://nodeweekly.com/rss/1452mph1" type="rss" description="A free, once–weekly e-mail round-up of Node.js news and articles." text="Node Weekly"/>
+            <outline htmlUrl="https://medium.com/@nodejs?source=rss-96cd9a1fb56------2" xmlUrl="https://medium.com/feed/@nodejs" type="rss" description="Stories by Node.js on Medium" text="Node.js Foundation on Medium"/>
+            <outline htmlUrl="https://www.reddit.com/r/node+nodejs/" xmlUrl="http://127.0.0.1:8099/r/node+nodejs/.rss" type="rss" description="" text="posts from node, nodejs"/>
+            <outline htmlUrl="https://www.reddit.com/r/javascript" xmlUrl="http://127.0.0.1:8099/r/javascript.rss" type="rss" description="Chat about javascript and javascript related projects. Yes, typescript counts. Please keep self promotion to a minimum/reasonable level." text="Reddit JavaScript"/>
+            <outline htmlUrl="https://www.reddit.com/r/node" xmlUrl="http://127.0.0.1:8099/r/node.rss" type="rss" description="Unofficial Node.js subreddit. Discuss Node.js, JavaScript, TypeScript, and anything else in the Node.js ecosystem!" text="Reddit Node.js"/>
+            <outline htmlUrl="https://www.reddit.com/r/typescript" xmlUrl="http://127.0.0.1:8099/r/typescript.rss" type="rss" description="TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript." text="Reddit TypeScript"/>
+            <outline htmlUrl="http://news.vuejs.org" xmlUrl="https://feeds.fireside.fm/vuenews/rss" type="rss" description="We cover the latest Vue news and tutorials in about 5 minutes. Our goal is to give you the information you need to stay on top of your game as a Vue developer. Links to all the stories we talk about can be found in our weekly newsletter and on http://news.vuejs.org" text="The Official Vue News"/>
+            <outline htmlUrl="http://www.unheap.com" xmlUrl="http://feeds.feedburner.com/unheap?format=xml" type="rss" description="A tidy Repository of jQuery Plugins &amp; JavaScripts" text="Unheap"/>
+            <outline htmlUrl="https://workingdraft.de" xmlUrl="https://workingdraft.de/feed/" type="rss" description="Working Draft ist der deutschsprachige Podcast für Frontend-Entwicklung, Webdesign und UI Engineering.
+
+Bei uns geht’s um HTML, CSS, JavaScript, Frameworks wie React, Vue und Angular, Responsive Webdesign, User-Interfaces, moderne UI-Patterns, Barrierefreiheit, Tooling, Design-Systeme, Webstandards und mehr.
+
+Unser Team besteht aus erfahrenen Frontend-Entwickler:innen aus Deutschland und Österreich – mit Gästen aus der Praxis, die regelmäßig Einblicke in aktuelle Tech-Themen geben. Ob neue CSS-Features, die Zukunft von JavaScript, KI im Frontend-Workflow oder einfach gute UI-Erfahrungen: Wir reden drüber – jede Woche neu." text="Working Draft"/>
+        </outline>
+        <outline text="Information Technology">
+            <outline htmlUrl="https://changelog.com/news" xmlUrl="https://changelog.com/news/feed" type="rss" description="Developer news worth your attention. Brief, entertaining &amp; always on point. The software world moves fast. Keep up with Changelog News. Every Monday, Adam Stacoviak brings you the software news you absolutely need to know about, without the fluff." text="Changelog News"/>
+            <outline htmlUrl="http://www.apple.com/hotnews/" xmlUrl="https://images.apple.com/main/rss/hotnews/hotnews.rss" type="rss" description="Hot News provided by Apple." text="Apple Hot News"/>
+            <outline htmlUrl="https://www.gamestar.de/" xmlUrl="https://www.gamestar.de/news/rss/news.rss" type="rss" description="News und Hintergründe aus der Welt der PC-Spiele." text="GameStar"/>
+            <outline htmlUrl="https://www.golem.de/" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" type="rss" description="IT-News fuer Profis" text="Golem.de"/>
+            <outline htmlUrl="https://news.ycombinator.com/" xmlUrl="https://news.ycombinator.com/rss" type="rss" description="Links for the intellectually curious, ranked by readers." text="Hacker News"/>
+            <outline htmlUrl="https://www.heise.de/" xmlUrl="https://www.heise.de/rss/heise-atom.xml" type="rss" description="Nachrichten nicht nur aus der Welt der Computer" text="heise online News"/>
+            <outline htmlUrl="https://www.infoq.com" xmlUrl="https://feed.infoq.com/?token=1DWmNpIIOCd4Wd7F0jvdmit94DW8pFyA" type="rss" description="InfoQ feed" text="InfoQ"/>
+            <outline htmlUrl="https://nerds.xyz" xmlUrl="https://nerds.xyz/feed/" type="rss" description="Real Tech News for Real Nerds" text="NERDS.xyz"/>
+            <outline htmlUrl="https://www.osnews.com" xmlUrl="https://www.osnews.com/feed/" type="rss" description="Exploring the Future of Computing" text="OSNews"/>
+            <outline htmlUrl="https://techncruncher.blogspot.com/" xmlUrl="http://feeds.feedburner.com/TechCrunch/" type="rss" description="Tech Crunch is a free Digital Marketing Site. The main goal of this site is to provide quality tutorials, tips, courses, tools and other resources that allows anyone to work online and master digital marketing based on real case study and deep research." text="TechCrunch"/>
+            <outline htmlUrl="https://www.engadget.com/" xmlUrl="https://www.engadget.com/rss.xml" type="rss" description="Breaking news from the worlds of technology and entertainment, and expert reviews of the latest consumer tech products." text="The Unofficial Apple Weblog (TUAW)"/>
+            <outline htmlUrl="http://tidbits.com/" xmlUrl="https://feeds.feedburner.com/tidbits_main?format=xml" type="rss" description="The oldest continuously published technology publication on the Internet, TidBITS brings you the Apple Macintosh, iPhone, iPad, and iPod news, reviews, tips, and commentary that matters. Join us each week for audio versions of award-winning coverage from industry stalwarts Adam Engst, Josh Centers, Michael Cohen, Rich Mogull, Joe Kissell, Jeff Carlson, Glenn Fleishman, Tonya Engst, and others." text="TidBITS: Mac News for the Rest of Us"/>
+        </outline>
+        <outline text="Video Engineering">
+            <outline htmlUrl="https://www.reddit.com/r/audioengineering" xmlUrl="http://127.0.0.1:8099/r/audioengineering.rss" type="rss" description="Products, practices, and stories about the profession or hobby of recording, editing, and producing audio." text="Reddit Audio Engineering"/>
+            <outline htmlUrl="https://www.reddit.com/r/AudioPlugins" xmlUrl="http://127.0.0.1:8099/r/AudioPlugins.rss" type="rss" description="Discussion about audio plugins, vst, vsti, virtual instruments, etc." text="Reddit AudioPlugins"/>
+            <outline htmlUrl="https://www.reddit.com/r/broadcastengineering" xmlUrl="http://127.0.0.1:8099/r/broadcastengineering.rss" type="rss" description="" text="Reddit Broadcast Engineering"/>
+            <outline htmlUrl="https://www.reddit.com/r/livesound" xmlUrl="http://127.0.0.1:8099/r/livesound.rss" type="rss" description="This subreddit is dedicated to Live Sound Reinforcement Professionals and a discussion of topics relating to the profession. Visit r/livesoundgear for gear and advice discussion." text="Reddit Live Sound"/>
+            <outline htmlUrl="https://www.reddit.com/r/obs" xmlUrl="http://127.0.0.1:8099/r/obs.rss" type="rss" description="Free, open source live streaming and recording software for Windows, macOS and Linux" text="Reddit OBS Studio"/>
+            <outline htmlUrl="https://www.reddit.com/r/VDONinja" xmlUrl="http://127.0.0.1:8099/r/VDONinja.rss" type="rss" description="The official sub-reddit of VDO.Ninja; a browser-based low-latency live streaming toolset for video production." text="Reddit VDO.Ninja"/>
+            <outline htmlUrl="https://www.reddit.com/r/VIDEOENGINEERING" xmlUrl="http://127.0.0.1:8099/r/VIDEOENGINEERING.rss" type="rss" description="This subreddit is open to anyone to discuss, share and show their work, as well as ask questions towards anything concerning video production. From a dad with a camcorder to a professional engineer at the superbowl, or a small meeting room operator to a widescreen specialist, LED wall engineer or a electrical video engineer. All things video are welcome! Feel free to post anything you like from questions to pictures." text="Reddit Video Engineering"/>
+            <outline htmlUrl="https://www.reddit.com/r/vmix" xmlUrl="http://127.0.0.1:8099/r/vmix.rss" type="rss" description="A subreddit for discussion and assistance for the vMix, vMix Social, and vMix Replay software. If you want to try out vMix, you can find a free trial on their website below! http://vmix.com" text="Reddit vMix"/>
+        </outline>
+    </body>
+</opml>
