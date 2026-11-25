@@ -1,0 +1,58 @@
+name: Deploy static content to Pages
+
+on:
+    push:
+        branches: [ "main" ]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: "pages"
+    cancel-in-progress: false
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        outputs:
+            artifact: github-pages-${{ github.run_attempt }}
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v7
+                with:
+                    persist-credentials: false
+            -   name: Setup Pages
+                uses: actions/configure-pages@v6
+            -   name: Upload artifact
+                uses: actions/upload-pages-artifact@v5
+                with:
+                    path: "."
+                    name: github-pages-${{ github.run_attempt }}
+    deploy:
+        needs: build
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url || steps.deployment-retry.outputs.page_url }}
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        steps:
+            -   name: Deploy to GitHub Pages
+                id: deployment
+                continue-on-error: true
+                uses: actions/deploy-pages@v5
+                with:
+                    artifact_name: ${{ needs.build.outputs.artifact }}
+            -   name: Wait for artifact visibility
+                if: steps.deployment.outcome == 'failure'
+                run: sleep 30
+            -   name: Deploy to GitHub Pages (retry)
+                id: deployment-retry
+                if: steps.deployment.outcome == 'failure'
+                uses: actions/deploy-pages@v5
+                with:
+                    artifact_name: ${{ needs.build.outputs.artifact }}
+
